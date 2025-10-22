@@ -1,0 +1,109 @@
+﻿.site-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 178px;
+    width: auto;
+}
+
+/* MENU LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+    .nav-links li a {
+        color: #1c1333;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+        .nav-links li a:hover {
+            color: #fcb130;
+        }
+
+/* BOTÃO DESTACADO */
+.buy-btn {
+    background-color: #fcb130;
+    color: #fff !important;
+    padding: 1rem 1.4rem;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(252,177,48,0.4);
+    transition: all 0.3s ease;
+}
+
+    .buy-btn:hover {
+        background-color: #fff;
+        color: #fcb130 !important;
+        border: 1px solid #fcb130;
+        transform: translateY(-2px);
+        transition: all .45s ease;
+    }
+
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #1c1333;
+    cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .nav-container {
+        padding: 1rem 2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1.5rem;
+        padding: 2rem;
+        transform: translateY(-150%);
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        transition: all 0.4s ease;
+    }
+
+        .nav-links.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+    .buy-btn {
+        align-self: stretch;
+        text-align: center;
+    }
+}

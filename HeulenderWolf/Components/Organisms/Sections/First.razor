@@ -1,37 +1,45 @@
 ﻿@using HeulenderWolf.Components.Molecules
 
-<section class="hero-section d-flex flex-wrap align-items-center justify-content-between container py-5">
-    <div class="hero-text col-12 col-md-6 d-flex flex-column justify-content-center gap-3">
-        <img src="/img/logo.png" alt="Logo" class="hero-logo d-block d-md-none mb-3" />
-
-        <h1 class="fw-bold display-4 text-dark">Seu novo companheiro espera por você!</h1>
-        <p class="text-secondary">
+<section class="hero-section d-flex flex-wrap align-items-center justify-content-between">
+    <div class="hero-text col-12 col-md-6">
+        <h1 class="hero-title">Seu novo companheiro espera por você!</h1>
+        <p class="hero-subtitle">
             Mais que um filhote, um membro da família. <br />
-            Machos a partir de <strong>R$1.599</strong><br />
+            Machos a partir de <strong>R$1.599</strong> <br />
             Fêmeas a partir de <strong>R$2.399</strong>
         </p>
-
-        <HWButton Texto="Comprar Agora" CSSButton="btn-hero" />
+        <HWButton Texto="Comprar Agora"/>
     </div>
 
     <div class="hero-image col-12 col-md-6 position-relative text-center">
-        <img src="/img/hero-girl-dog.png" alt="Mulher com filhote" class="img-fluid main-image" />
+        <img src="/img/hero-woman-dog.png" alt="Mulher com filhote Shih-Tzu" class="img-fluid main-dog-img" />
 
-        <div class="floating-badge badge1">
-            <i class="bi bi-award"></i>
-            <span><strong>780 +</strong><br />Clientes Satisfeitos</span>
+        <div class="hero-badge badge-clientes">
+            <i class="bi bi-award-fill"></i>
+            <div>
+                <strong>780 +</strong><br />
+                Clientes Satisfeitos
+            </div>
         </div>
 
-        <div class="floating-badge badge2">
+        <div class="hero-badge badge-vacinados">
             <i class="bi bi-syringe"></i>
-            <span>Vacinados<br />& Vermifugados</span>
+            <div>
+                <strong>Vacinados</strong><br />
+                & Vermifugados
+            </div>
         </div>
 
-        <div class="floating-badge badge3">
-            <i class="bi bi-patch-check"></i>
-            <span>Adestrados<br />Tapete higiênico</span>
+        <div class="hero-badge badge-adestrados">
+            <i class="bi bi-patch-check-fill"></i>
+            <div>
+                <strong>Adestrados</strong><br />
+                Tapete higiênico
+            </div>
         </div>
 
-        <img src="/img/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon" />
+        <a href="https://wa.me/5511999999999" class="whatsapp-icon">
+            <img src="/img/whatsapp-icon.png" alt="WhatsApp" />
+        </a>
     </div>
 </section>
