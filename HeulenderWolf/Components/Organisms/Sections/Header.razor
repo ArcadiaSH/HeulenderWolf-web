@@ -1,4 +1,5 @@
-﻿@using HeulenderWolf.Components.Molecules
+﻿@rendermode InteractiveServer
+@using HeulenderWolf.Components.Molecules
 
 <header class="site-header">
     <nav class="nav-container">
@@ -7,23 +8,18 @@
         </div>
 
         <button class="menu-toggle" @onclick="ToggleMenu">
-            <i class="bi bi-list"></i>
+            <i class="bi @(isMenuOpen ? "bi-x" : "bi-list")"></i>
         </button>
 
         <ul class="nav-links @(isMenuOpen ? "open" : "")">
-            <li><a href="#filhotes">Filhotes</a></li>
-            <li><a href="#sobre">Sobre Nós</a></li>
-            <li><a href="#diferenciais">Diferenciais</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#filhotes" @onclick="CloseMenu">Filhotes</a></li>
+            <li><a href="#sobre" @onclick="CloseMenu">Sobre Nós</a></li>
+            <li><a href="#diferenciais" @onclick="CloseMenu">Diferenciais</a></li>
+            <li><a href="#depoimentos" @onclick="CloseMenu">Depoimentos</a></li>
+            <li><a href="#faq" @onclick="CloseMenu">FAQ</a></li>
             <li>
-                <a href="#comprar" class="buy-btn">Comprar Meu Shih-Tzu</a>
+                <a href="#comprar" class="buy-btn" @onclick="CloseMenu">Comprar Meu Shih-Tzu</a>
             </li>
         </ul>
     </nav>
 </header>
-
-@code {
-    private bool isMenuOpen = false;
-    private void ToggleMenu() => isMenuOpen = !isMenuOpen;
-}
