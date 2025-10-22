@@ -1,5 +1,37 @@
-﻿<h3>Filhotes</h3>
+﻿@using HeulenderWolf.Components.Molecules
 
-@code {
+<section class="hero-section d-flex flex-wrap align-items-center justify-content-between container py-5">
+    <div class="hero-text col-12 col-md-6 d-flex flex-column justify-content-center gap-3">
+        <img src="/img/logo.png" alt="Logo" class="hero-logo d-block d-md-none mb-3" />
 
-}
+        <h1 class="fw-bold display-4 text-dark">Seu novo companheiro espera por você!</h1>
+        <p class="text-secondary">
+            Mais que um filhote, um membro da família. <br />
+            Machos a partir de <strong>R$1.599</strong><br />
+            Fêmeas a partir de <strong>R$2.399</strong>
+        </p>
+
+        <HWButton Texto="Comprar Agora" CSSButton="btn-hero" />
+    </div>
+
+    <div class="hero-image col-12 col-md-6 position-relative text-center">
+        <img src="/img/hero-girl-dog.png" alt="Mulher com filhote" class="img-fluid main-image" />
+
+        <div class="floating-badge badge1">
+            <i class="bi bi-award"></i>
+            <span><strong>780 +</strong><br />Clientes Satisfeitos</span>
+        </div>
+
+        <div class="floating-badge badge2">
+            <i class="bi bi-syringe"></i>
+            <span>Vacinados<br />& Vermifugados</span>
+        </div>
+
+        <div class="floating-badge badge3">
+            <i class="bi bi-patch-check"></i>
+            <span>Adestrados<br />Tapete higiênico</span>
+        </div>
+
+        <img src="/img/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon" />
+    </div>
+</section>
