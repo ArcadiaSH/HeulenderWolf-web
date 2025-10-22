@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace HeulenderWolf.Components.Molecules
+namespace HeulenderWolf.Components.Atoms
 {
-    public partial class HWButton : ComponentBase
+    public partial class HWText : ComponentBase
     {
         #region PARAMETROS
         [Parameter] public string Texto { get; set; } = "Compre agora";
