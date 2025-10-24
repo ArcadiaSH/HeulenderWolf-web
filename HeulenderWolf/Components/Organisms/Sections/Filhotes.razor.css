@@ -1,1 +1,157 @@
-﻿
+﻿.filhotes-section {
+    background: #fff;
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.filhotes-subtitle {
+    color: #fcb130;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.filhotes-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #1c1333;
+    margin: 1rem 0 3rem;
+}
+
+.filhotes-cards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* CARD */
+.filhote-card {
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    padding: 3rem 2rem;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+    .filhote-card:hover {
+        border-color: #fcb130;
+        transform: translateY(-3px);
+    }
+
+.filhote-info {
+    position: relative;
+    z-index: 2;
+}
+
+.filhote-gender {
+    font-weight: 700;
+    color: #1c1333;
+    margin-bottom: 0.2rem;
+}
+
+.filhote-old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.filhote-price {
+    color: #1c1333;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+}
+
+    .filhote-price span {
+        font-size: 0.9rem;
+        color: #726e7f;
+        font-weight: 400;
+    }
+
+.filhote-benefits {
+    list-style: none;
+    text-align: left;
+    padding-left: 0;
+    margin: 1.5rem 0;
+    color: #4b4658;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.filhotesCheckYellow {
+    color: #fcb130;
+    font-size: 1.3rem;
+}
+
+.filhotesCheckGreen {
+    color: #25D366;
+    font-size: 1.3rem;
+}
+
+/* BOTÃO */
+.filhote-btn {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border: 2px solid #fcb130;
+    border-radius: 30px;
+    font-weight: 700;
+    color: #fcb130;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .filhote-btn:hover {
+        background-color: #fcb130;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+/* ====== IMAGENS DECORATIVAS ====== */
+.filhote-img-left,
+.filhote-img-right {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.95;
+    max-width: 230px;
+    pointer-events: none;
+}
+
+.filhote-img-left {
+    left: 0;
+}
+
+.filhote-img-right {
+    right: 0;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+    .filhotes-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filhote-card {
+        padding: 2.5rem 1.5rem;
+        max-width: 90%;
+    }
+
+    .filhote-img-left,
+    .filhote-img-right {
+        display: none;
+    }
+
+    .filhotes-title {
+        font-size: 2.2rem;
+    }
+}
