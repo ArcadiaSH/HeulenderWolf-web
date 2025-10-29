@@ -1,1 +1,122 @@
-﻿
+﻿.faq-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+    background: #fff;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.faq-container {
+    width: 40%;
+    text-align: center;
+    z-index: 2;
+}
+
+.faq-subtitle {
+    color: #fbbf24;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.faq-title {
+    color: #0b0524;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+}
+
+/* Accordion */
+.accordion-button {
+    background-color: #8CE1C957;
+    color: #fbbf24;
+    font-weight: 700;
+    border: none;
+    box-shadow: none;
+}
+
+    .accordion-button:not(.collapsed) {
+        color: #fbbf24;
+        background-color: #f0fffa;
+        box-shadow: none;
+    }
+
+    /* Remove ícones de seta do accordion */
+    .accordion-button::after {
+        display: none !important;
+    }
+
+.accordion-item {
+    border: none;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.accordion-body {
+    background-color: #f8fcff;
+    color: #444;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Botão CTA */
+.cta-button {
+    background-color: #fbbf24;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .cta-button:hover {
+        background-color: #fff;
+        color: #fbbf24;
+        border: 2px solid #fbbf24;
+        transform: translateY(-3px);
+    }
+
+/* Imagens dos cachorros */
+.faq-dog {
+    position: absolute;
+    bottom: 0;
+    width: 220px;
+    height: auto;
+    z-index: 1;
+}
+
+.dog-left {
+    left: 0;
+}
+
+.dog-right {
+    right: 0;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .faq-section {
+        padding: 3rem 1rem;
+    }
+
+    .faq-title {
+        font-size: 1.8rem;
+    }
+
+    .faq-dog {
+        display: none;
+    }
+
+    .faq-container {
+        width: 100%;
+    }
+}
