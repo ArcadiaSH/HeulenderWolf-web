@@ -1,89 +1,96 @@
-﻿.footer {
+﻿/* ===========================================================
+   FOOTER SECTION
+   Estrutura visual, hierarquia tipográfica e responsividade
+   =========================================================== */
+
+.footer {
     background-color: #9db184;
-    padding: 60px 0 20px;
     color: #1a1a1a;
+    padding: 60px 0 20px;
 }
 
+/* --- Logo e Texto --- */
 .footer-logo-img {
     width: 218px;
-    height: auto;
     margin-bottom: 20px;
+    height: auto;
 }
 
 .footer p {
     font-size: 15px;
     line-height: 1.6;
-    color: #1a1a1a;
 }
 
+/* --- Títulos das Colunas --- */
 .footer-links h5,
 .footer-about h5 {
     font-weight: 700;
     margin-bottom: 20px;
-    color: #1a1a1a;
 }
 
+/* --- Links Úteis --- */
 .footer-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-    .footer-links ul li {
-        margin-bottom: 10px;
-    }
+.footer-links li {
+    margin-bottom: 10px;
+}
 
-        .footer-links ul li a {
-            color: #1a1a1a;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.footer-links a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-            .footer-links ul li a:hover {
-                color: #fff;
-            }
+.footer-links a:hover {
+    color: #fff;
+}
 
+/* --- Sobre Nós --- */
 .footer-about p {
     margin-bottom: 10px;
 }
 
-/* Ícones sociais com animação */
+/* --- Ícones Sociais --- */
 .footer-social {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
 }
 
-    .footer-social .social-icon {
-        color: #fff;
-        font-size: 22px;
-        transition: transform 0.3s ease, color 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
-        text-decoration: none;
-    }
-
-/* Animação igual ao botão do WhatsApp */
-@keyframes floatPulse {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
+.social-icon {
+    color: #fff;
+    font-size: 22px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-/* Hover */
-.footer-social .social-icon:hover {
+.social-icon:hover {
     background: #fbbf24;
     transform: scale(1.15);
 }
 
+/* --- Animação de Flutuação (usada nos ícones) --- */
+@keyframes floatPulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+    animation: floatPulse 3s ease-in-out infinite;
+}
+
+/* --- Contato --- */
 .footer-contact {
     display: flex;
     align-items: center;
@@ -94,10 +101,10 @@
     width: 50px;
     height: 50px;
     margin-right: 10px;
+    transition: transform 0.45s ease;
 }
 
 .icon-footer:hover {
-    transition: all .45s ease;
     transform: scale(1.15);
 }
 
@@ -110,36 +117,40 @@
     font-size: 13px;
 }
 
+/* --- Rodapé Inferior --- */
 .footer-bottom {
     margin-top: 30px;
     font-size: 13px;
 }
 
-    .footer-bottom .dev-link {
-        color: #fba819;
-        font-weight: 600;
-        text-decoration: none;
-    }
+.dev-link {
+    color: #fba819;
+    font-weight: 600;
+    text-decoration: none;
+}
 
-        .footer-bottom .dev-link:hover {
-            text-decoration: underline;
-        }
+.dev-link:hover {
+    text-decoration: underline;
+}
 
-/* Responsivo */
+/* --- Responsivo --- */
 @media (max-width: 768px) {
-    .footer-content {
-        text-align: center;
-    }
-
+    .footer-content,
+    .footer-social,
     .footer-contact {
-        justify-content: center;
-    }
-
-    .footer-social {
+        text-align: center;
         justify-content: center;
     }
 
     .footer-logo {
         margin-bottom: 30px;
+    }
+
+    .footer-contact {
+        flex-direction: column;
+    }
+
+    .icon-footer {
+        margin: 0 0 8px 0;
     }
 }
