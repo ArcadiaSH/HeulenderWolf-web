@@ -1,4 +1,8 @@
-﻿.faq-section {
+﻿/* ===========================================================
+   FAQ SECTION
+   Estrutura visual, hierarquia tipográfica e responsividade
+   =========================================================== */
+.faq-section {
     position: relative;
     display: flex;
     justify-content: center;
@@ -6,15 +10,16 @@
     padding: 5rem 2rem;
     background: #fff;
     overflow: hidden;
-    margin: 0 auto;
 }
 
+/* Container */
 .faq-container {
     width: 40%;
     text-align: center;
     z-index: 2;
 }
 
+/* Títulos */
 .faq-subtitle {
     color: #fbbf24;
     font-weight: 700;
@@ -31,8 +36,14 @@
 }
 
 /* Accordion */
+.accordion-item {
+    border: none;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
 .accordion-button {
-    background-color: #8CE1C957;
+    background-color: #8ce1c957;
     color: #fbbf24;
     font-weight: 700;
     border: none;
@@ -49,12 +60,6 @@
     .accordion-button::after {
         display: none !important;
     }
-
-.accordion-item {
-    border: none;
-    margin-bottom: 0.5rem;
-    overflow: hidden;
-}
 
 .accordion-body {
     background-color: #f8fcff;
@@ -85,7 +90,7 @@
         transform: translateY(-3px);
     }
 
-/* Imagens dos cachorros */
+/* Imagens laterais */
 .faq-dog {
     position: absolute;
     bottom: 0;
@@ -102,10 +107,10 @@
     right: 0;
 }
 
-/* Responsivo */
+/* ===== Responsividade ===== */
 @media (max-width: 1024px) {
-    .faq-section {
-        padding: 3rem 1rem;
+    .faq-container {
+        width: 100%;
     }
 
     .faq-title {
@@ -114,9 +119,5 @@
 
     .faq-dog {
         display: none;
-    }
-
-    .faq-container {
-        width: 100%;
     }
 }
