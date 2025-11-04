@@ -1,24 +1,26 @@
-﻿/* Container geral */
+﻿/* ===============================
+   SECTION: DIFERENCIAIS
+   =============================== */
 .diferenciais-container {
-    position: relative;
+    position: relative; /* necessário para posicionar imagens absolutas */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 6rem 2rem 8rem;
     background-color: #fff;
-    overflow: hidden;
+    overflow: hidden; /* impede imagens de ultrapassarem os limites */
     font-family: 'Inter', sans-serif;
 }
 
-/* Imagens dos cachorros */
+/* ===== IMAGENS DOS CÃES ===== */
 .diferenciais-images {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
-    pointer-events: none;
+    pointer-events: none; /* evita clique nas imagens */
     z-index: 1;
 }
 
@@ -39,15 +41,15 @@
     transform: translateX(10%);
 }
 
-/* Conteúdo principal */
+/* ===== CONTEÚDO PRINCIPAL ===== */
 .diferenciais-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* garante que fique acima das imagens */
     max-width: 1250px;
     width: 100%;
 }
 
-/* Titles */
+/* ===== TÍTULOS ===== */
 .diferenciais-subtitle {
     color: #fbbf24;
     font-weight: 700;
@@ -63,7 +65,7 @@
     margin-bottom: 3.5rem;
 }
 
-/* Cards layout */
+/* ===== CONTAINER DOS CARDS ===== */
 .cards-container {
     display: flex;
     justify-content: center;
@@ -73,7 +75,7 @@
     max-width: 1180px;
 }
 
-/* Card */
+/* ===== ESTILO DOS CARDS ===== */
 .card-item {
     background: #fff;
     border-radius: 1.8rem;
@@ -90,7 +92,7 @@
         box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.09);
     }
 
-/* Icon circle */
+/* ===== ÍCONE CIRCULAR ===== */
 .icon-bg {
     width: 96px;
     height: 96px;
@@ -103,15 +105,12 @@
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* Icon image */
 .icon {
     width: 62px;
-    height: auto;
     transition: transform 0.28s ease;
-    display: block;
 }
 
-/* Cores */
+/* ===== CORES DOS CARDS ===== */
 .card-green .icon-bg {
     background: #e6f9f0;
     border: 4px solid rgba(52,211,153,0.15);
@@ -137,7 +136,7 @@
     border: 4px solid rgba(59,130,246,0.12);
 }
 
-/* Hover */
+/* ===== HOVER ===== */
 .card-item:hover .icon-bg {
     transform: scale(1.08);
     box-shadow: 0 14px 30px rgba(0,0,0,0.10);
@@ -147,7 +146,6 @@
     transform: scale(1.12);
 }
 
-/* Hover color border */
 .card-green:hover {
     border-color: #34d399;
 }
@@ -168,7 +166,7 @@
     border-color: #3b82f6;
 }
 
-/* Textos */
+/* ===== TEXTOS ===== */
 .card-item h3 {
     font-size: 1.15rem;
     font-weight: 700;
@@ -182,7 +180,7 @@
     line-height: 1.5;
 }
 
-/* CTA */
+/* ===== BOTÃO CTA ===== */
 .cta-button {
     margin-top: 3.5rem;
     background-color: #fbbf24;
@@ -202,7 +200,9 @@
         border: 1px solid #fcb130;
     }
 
-/* Responsivo desktop -> tablet */
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets / desktops pequenos */
 @media (max-width: 1024px) {
     .cards-container {
         flex-wrap: wrap;
@@ -231,25 +231,25 @@
     }
 }
 
-/* Responsivo mobile */
+/* Celulares */
 @media (max-width: 768px) {
     .dog {
         display: none;
     }
-
+    /* remove imagens para economizar espaço */
     .diferenciais-title {
         font-size: 1.6rem;
     }
 
     .cards-container {
-        flex-direction: column; /* <-- empilha os cards */
+        flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
     .card-item {
         width: 100%;
-        max-width: 380px; /* opcional para não ocupar 100% em telas grandes */
+        max-width: 380px;
     }
 
     .cta-button {

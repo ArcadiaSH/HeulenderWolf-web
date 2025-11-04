@@ -1,8 +1,8 @@
-﻿/* ===========================================================
-   FAQ SECTION
-   Estrutura visual, hierarquia tipográfica e responsividade
-   =========================================================== */
+﻿/* ===============================
+   SECTION: FAQ
+   =============================== */
 .faq-section {
+    /* Container principal da seção */
     position: relative;
     display: flex;
     justify-content: center;
@@ -12,112 +12,122 @@
     overflow: hidden;
 }
 
-/* Container */
+/* --- Container Central --- */
 .faq-container {
+    /* Define largura e centraliza o conteúdo */
     width: 40%;
     text-align: center;
     z-index: 2;
 }
 
-/* Títulos */
+/* --- Subtítulo (pequeno texto acima do título principal) --- */
 .faq-subtitle {
-    color: #fbbf24;
-    font-weight: 700;
-    letter-spacing: 2px;
+    color: #fbbf24; /* Amarelo vibrante */
+    font-weight: 700; /* Negrito */
+    letter-spacing: 2px; /* Espaçamento entre letras */
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
+/* --- Título Principal --- */
 .faq-title {
-    color: #0b0524;
-    font-size: 2.5rem;
-    font-weight: 800;
+    color: #0b0524; /* Azul escuro / roxo escuro */
+    font-size: 2.5rem; /* Tamanho grande */
+    font-weight: 800; /* Super negrito */
     margin-bottom: 2.5rem;
 }
 
-/* Accordion */
+/* --- Cada item do Accordion --- */
 .accordion-item {
-    border: none;
+    border: none; /* Remove bordas */
     margin-bottom: 0.5rem;
     overflow: hidden;
 }
 
+/* --- Botão do Accordion (cabeçalho do item) --- */
 .accordion-button {
-    background-color: #8ce1c957;
-    color: #fbbf24;
+    background-color: #8ce1c957; /* Verde claro translúcido */
+    color: #fbbf24; /* Texto amarelo */
     font-weight: 700;
     border: none;
     box-shadow: none;
 }
 
+    /* --- Estado aberto (ativo) do botão do accordion --- */
     .accordion-button:not(.collapsed) {
-        color: #fbbf24;
-        background-color: #f0fffa;
-        box-shadow: none;
+        color: #fbbf24; /* Mantém a cor do texto */
+        background-color: #f0fffa; /* Fundo mais claro */
+        box-shadow: none; /* Remove sombra padrão */
     }
 
-    /* Remove ícones de seta do accordion */
+    /* --- Remove o ícone padrão de seta do Bootstrap --- */
     .accordion-button::after {
         display: none !important;
     }
 
+/* --- Corpo (conteúdo expandido) do Accordion --- */
 .accordion-body {
-    background-color: #f8fcff;
-    color: #444;
+    background-color: #f8fcff; /* Fundo branco azulado */
+    color: #444; /* Texto cinza escuro */
     text-align: left;
     line-height: 1.6;
     font-size: 0.95rem;
 }
 
-/* Botão CTA */
+/* --- Botão de Chamada para Ação (CTA) --- */
 .cta-button {
-    background-color: #fbbf24;
-    color: #fff;
+    background-color: #fbbf24; /* Amarelo */
+    color: #fff; /* Texto branco */
     border: none;
-    border-radius: 2rem;
+    border-radius: 2rem; /* Bordas arredondadas */
     padding: 1rem 3rem;
     font-weight: 700;
     font-size: 1.1rem;
     margin-top: 2.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Suaviza hover */
 }
 
+    /* --- Efeito hover do botão CTA --- */
     .cta-button:hover {
-        background-color: #fff;
+        background-color: #fff; /* Inverte cores */
         color: #fbbf24;
         border: 2px solid #fbbf24;
-        transform: translateY(-3px);
+        transform: translateY(-3px); /* Leve elevação */
     }
 
-/* Imagens laterais */
+/* --- Imagens Laterais (Cachorros decorativos) --- */
 .faq-dog {
     position: absolute;
     bottom: 0;
     width: 220px;
     height: auto;
-    z-index: 1;
+    z-index: 1; /* Ficam atrás do conteúdo */
 }
 
+/* --- Cachorro do lado esquerdo --- */
 .dog-left {
     left: 0;
 }
 
+/* --- Cachorro do lado direito --- */
 .dog-right {
     right: 0;
 }
 
-/* ===== Responsividade ===== */
+/* ===============================
+   RESPONSIVIDADE
+   =============================== */
 @media (max-width: 1024px) {
     .faq-container {
-        width: 100%;
+        width: 100%; /* Ocupa a largura total */
     }
 
     .faq-title {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Reduz o título */
     }
 
     .faq-dog {
-        display: none;
+        display: none; /* Remove imagens em telas menores */
     }
 }
