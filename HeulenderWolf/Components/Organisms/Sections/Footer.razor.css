@@ -1,1 +1,188 @@
-﻿
+﻿/* ===============================
+   SECTION: FOOTER
+   =============================== */
+.footer {
+    /* Cor de fundo verde suave do rodapé */
+    background-color: #9db184;
+    /* Cor principal do texto */
+    color: #1a1a1a;
+    /* Espaçamento interno (topo, laterais e base) */
+    padding: 60px 0 20px;
+}
+
+/* --- Logo e Texto --- */
+.footer-logo-img {
+    /* Largura fixa da logo */
+    width: 218px;
+    /* Espaço inferior */
+    margin-bottom: 20px;
+    /* Mantém proporção da imagem */
+    height: auto;
+}
+
+/* Estilo dos parágrafos gerais do footer */
+.footer p {
+    font-size: 15px;
+    line-height: 1.6; /* Melhor legibilidade */
+}
+
+/* --- Títulos das Colunas --- */
+.footer-links h5,
+.footer-about h5 {
+    /* Deixa o título em negrito */
+    font-weight: 700;
+    /* Espaço abaixo dos títulos */
+    margin-bottom: 20px;
+}
+
+/* --- Links Úteis --- */
+.footer-links ul {
+    /* Remove marcadores e espaçamentos padrão da lista */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Espaço entre cada item da lista */
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+/* Estilo padrão dos links */
+.footer-links a {
+    color: #1a1a1a;
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.3s; /* Transição suave ao hover */
+}
+
+    /* Cor dos links ao passar o mouse */
+    .footer-links a:hover {
+        color: #fff;
+    }
+
+/* --- Sobre Nós --- */
+.footer-about p {
+    /* Espaço inferior entre parágrafos */
+    margin-bottom: 10px;
+}
+
+/* --- Ícones Sociais --- */
+.footer-social {
+    /* Exibe os ícones lado a lado */
+    display: flex;
+    gap: 10px; /* Espaçamento entre ícones */
+    margin-bottom: 15px;
+}
+
+/* Estilo dos ícones das redes sociais */
+.social-icon {
+    color: #fff; /* Ícone branco */
+    font-size: 22px; /* Tamanho do ícone */
+    width: 42px;
+    height: 42px;
+    border-radius: 50%; /* Ícones circulares */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.4); /* Fundo translúcido */
+    text-decoration: none;
+    /* Transições para efeito suave */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+    /* Efeito hover: ícone cresce e muda a cor do fundo */
+    .social-icon:hover {
+        background: #fbbf24; /* Dourado */
+        transform: scale(1.15);
+    }
+
+/* --- Animação de Flutuação (usada nos ícones) --- */
+@keyframes floatPulse {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Classe para aplicar a animação de flutuação */
+.animate-float {
+    animation: floatPulse 3s ease-in-out infinite;
+}
+
+/* --- Contato --- */
+.footer-contact {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    margin-top: 15px;
+}
+
+/* Ícone ao lado do número (headset, WhatsApp etc.) */
+.icon-footer {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    transition: transform 0.45s ease; /* Efeito suave no hover */
+}
+
+    /* Efeito hover no ícone do contato */
+    .icon-footer:hover {
+        transform: scale(1.15);
+    }
+
+/* Estilo do número de telefone */
+.footer-contact .phone {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Texto menor abaixo do número */
+.footer-contact span {
+    font-size: 13px;
+}
+
+/* --- Rodapé Inferior --- */
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 13px; /* Texto menor */
+}
+
+/* Link do desenvolvedor */
+.dev-link {
+    color: #fba819; /* Dourado */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    /* Efeito hover do link do desenvolvedor */
+    .dev-link:hover {
+        text-decoration: underline;
+    }
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+    /* Centraliza o conteúdo e ícones no mobile */
+    .footer-content,
+    .footer-social,
+    .footer-contact {
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Espaço extra abaixo da logo no mobile */
+    .footer-logo {
+        margin-bottom: 30px;
+    }
+
+    /* Alinha os elementos de contato em coluna */
+    .footer-contact {
+        flex-direction: column;
+    }
+
+    /* Ajusta espaçamento do ícone */
+    .icon-footer {
+        margin: 0 0 8px 0;
+    }
+}

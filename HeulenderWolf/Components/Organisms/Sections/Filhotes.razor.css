@@ -1,4 +1,7 @@
-﻿.filhotes-section {
+﻿/* ===============================
+   SECTION: FILHOTES
+   =============================== */
+.filhotes-section {
     background: #fff;
     padding: 8rem 2rem;
     text-align: center;
@@ -6,6 +9,7 @@
     overflow: hidden;
 }
 
+/* Subtítulo da seção */
 .filhotes-subtitle {
     color: #fcb130;
     font-weight: 700;
@@ -14,6 +18,7 @@
     font-size: 1rem;
 }
 
+/* Título principal */
 .filhotes-title {
     font-size: 2.5rem;
     font-weight: 900;
@@ -21,6 +26,7 @@
     margin: 1rem 0 3rem;
 }
 
+/* Container flexível dos cards */
 .filhotes-cards {
     display: flex;
     justify-content: center;
@@ -29,7 +35,9 @@
     flex-wrap: wrap;
 }
 
-/* CARD */
+/* ====================================== */
+/* CARD DOS FILHOTES */
+/* ====================================== */
 .filhote-card {
     background: #fff;
     border: 1px solid transparent;
@@ -42,28 +50,33 @@
     transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
+    /* Efeito hover nos cards */
     .filhote-card:hover {
         border-color: #fcb130;
         transform: translateY(-3px);
     }
 
+/* Conteúdo interno do card */
 .filhote-info {
     position: relative;
     z-index: 2;
 }
 
+/* Gênero (Macho/Fêmea) */
 .filhote-gender {
     font-weight: 700;
     color: #1c1333;
     margin-bottom: 0.2rem;
 }
 
+/* Preço antigo (riscado) */
 .filhote-old-price {
     text-decoration: line-through;
     color: #999;
     font-size: 0.9rem;
 }
 
+/* Preço atual */
 .filhote-price {
     color: #1c1333;
     font-size: 1.8rem;
@@ -71,12 +84,14 @@
     margin-bottom: 1.2rem;
 }
 
+    /* Texto auxiliar do preço */
     .filhote-price span {
         font-size: 0.9rem;
         color: #726e7f;
         font-weight: 400;
     }
 
+/* Lista de benefícios */
 .filhote-benefits {
     list-style: none;
     text-align: left;
@@ -87,6 +102,7 @@
     font-size: 0.95rem;
 }
 
+/* Ícones de check */
 .filhotesCheckYellow {
     color: #fcb130;
     font-size: 1.3rem;
@@ -97,7 +113,9 @@
     font-size: 1.3rem;
 }
 
-/* BOTÃO */
+/* ====================================== */
+/* BOTÃO DE CHAMADA PARA AÇÃO */
+/* ====================================== */
 .filhote-btn {
     display: inline-block;
     padding: 0.9rem 1.6rem;
@@ -109,13 +127,16 @@
     transition: all 0.3s ease;
 }
 
+    /* Animação hover do botão */
     .filhote-btn:hover {
         background-color: #fcb130;
         color: #fff;
         transform: translateY(-2px);
     }
 
-/* ====== IMAGENS DECORATIVAS ====== */
+/* ====================================== */
+/* IMAGENS DECORATIVAS DOS FILHOTES */
+/* ====================================== */
 .filhote-img-left,
 .filhote-img-right {
     position: absolute;
@@ -126,6 +147,7 @@
     pointer-events: none;
 }
 
+/* Posições laterais */
 .filhote-img-left {
     left: 0;
 }
@@ -134,23 +156,29 @@
     right: 0;
 }
 
-/* RESPONSIVO */
+/* ====================================== */
+/* RESPONSIVIDADE */
+/* ====================================== */
 @media (max-width: 992px) {
+    /* Alinha os cards em coluna no mobile */
     .filhotes-cards {
         flex-direction: column;
         align-items: center;
     }
 
+    /* Ajusta o tamanho dos cards */
     .filhote-card {
         padding: 2.5rem 1.5rem;
         max-width: 90%;
     }
 
+    /* Remove imagens decorativas no mobile */
     .filhote-img-left,
     .filhote-img-right {
         display: none;
     }
 
+    /* Reduz o tamanho do título */
     .filhotes-title {
         font-size: 2.2rem;
     }

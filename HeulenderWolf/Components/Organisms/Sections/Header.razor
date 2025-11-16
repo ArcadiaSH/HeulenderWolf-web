@@ -1,16 +1,26 @@
 ﻿@rendermode InteractiveServer
 @using HeulenderWolf.Components.Molecules
 
+<!--
+==============================
+SECTION: HEADER
+==============================
+-->
 <header class="site-header">
+    <!-- CONTAINER DE NAVEGAÇÃO -->
     <nav class="nav-container">
+
+        <!-- LOGO DA MARCA -->
         <div class="logo">
             <img src="/img/logo_bg.png" alt="Heulender Wolf Logo" />
         </div>
 
+        <!-- BOTÃO HAMBÚRGUER (menu mobile) -->
         <button class="menu-toggle" @onclick="ToggleMenu">
-            <i class="bi @(isMenuOpen ? "bi-x" : "bi-list")"></i>
+            <i class="bi @(isMenuOpen ? "bi-x" : "bi-list")"></i> <!-- Ícone muda conforme o estado do menu -->
         </button>
 
+        <!-- LISTA DE LINKS DO MENU -->
         <ul class="nav-links @(isMenuOpen ? "open" : "")">
             <li><a href="#filhotes" @onclick="CloseMenu">Filhotes</a></li>
             <li><a href="#sobre" @onclick="CloseMenu">Sobre Nós</a></li>
@@ -18,6 +28,7 @@
             <li><a href="#depoimentos" @onclick="CloseMenu">Depoimentos</a></li>
             <li><a href="#faq" @onclick="CloseMenu">FAQ</a></li>
             <li>
+                <!-- BOTÃO DE CHAMADA PARA AÇÃO -->
                 <a href="#comprar" class="buy-btn" @onclick="CloseMenu">Comprar Meu Shih-Tzu</a>
             </li>
         </ul>

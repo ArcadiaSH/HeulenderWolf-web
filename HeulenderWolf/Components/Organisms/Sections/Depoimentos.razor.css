@@ -1,21 +1,28 @@
-﻿.depoimentos-section {
+﻿/* ===============================
+   SECTION: Depoimentos
+   =============================== */
+.depoimentos-section {
+    /* Define layout em flexbox, separando os lados (texto e imagens) */
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
+    /* Fundo claro */
     background: #f9fcfd;
+    /* Espaçamento interno grande */
     padding: 6rem 10rem;
     position: relative;
     overflow: hidden;
 }
 
-/* Lado esquerdo */
+/* ===== Lado esquerdo: Texto ===== */
 .depoimentos-content {
     flex: 1;
     max-width: 600px;
     text-align: center;
 }
 
+/* Subtítulo dourado "DEPOIMENTOS" */
 .depoimentos-subtitle {
     color: #fbbf24;
     font-weight: 700;
@@ -24,6 +31,7 @@
     margin-bottom: 0.5rem;
 }
 
+/* Título principal da seção */
 .depoimentos-title {
     color: #0b0524;
     font-size: 2.8rem;
@@ -32,6 +40,7 @@
     line-height: 1.2;
 }
 
+/* Texto do depoimento */
 .depoimentos-texto {
     font-size: 1rem;
     color: #666;
@@ -39,11 +48,12 @@
     margin-bottom: 2.5rem;
 }
 
+    /* Margem entre parágrafos internos */
     .depoimentos-texto p {
         margin-bottom: 1rem;
     }
 
-/* Perfil */
+/* ===== Perfil ===== */
 .depoimentos-perfil {
     display: flex;
     align-items: center;
@@ -52,6 +62,7 @@
     margin-top: 1.5rem;
 }
 
+/* Foto do perfil redonda */
 .perfil-foto {
     width: 48px;
     height: 48px;
@@ -59,18 +70,20 @@
     object-fit: cover;
 }
 
+/* Nome da pessoa */
 .perfil-info h3 {
     font-size: 1rem;
     font-weight: 700;
     margin: 0;
 }
 
+/* Nome do pet */
 .perfil-info span {
     font-size: 0.9rem;
     color: #777;
 }
 
-/* Dots */
+/* ===== Dots ===== */
 .dots {
     display: flex;
     justify-content: center;
@@ -78,6 +91,7 @@
     margin: 1.5rem 0;
 }
 
+/* Bolinhas inativas */
 .dot {
     width: 8px;
     height: 8px;
@@ -86,11 +100,12 @@
     transition: background-color 0.3s ease;
 }
 
+    /* Bolinha ativa (amarela) */
     .dot.active {
         background-color: #fbbf24;
     }
 
-/* Botão CTA */
+/* ===== Botão CTA ===== */
 .cta-button {
     background-color: #fbbf24;
     color: #fff;
@@ -104,13 +119,15 @@
     margin-top: 2rem;
 }
 
+    /* Efeito hover no botão */
     .cta-button:hover {
         background-color: #fff;
         color: #fbbf24;
-        border: 1px solid #fbbf24
+        border: 2px solid #fbbf24;
+        transform: translateY(-3px);
     }
 
-/* Lado direito — imagens dos cachorros */
+/* ===== Lado direito: Imagens ===== */
 .depoimentos-imagens {
     display: flex;
     flex-direction: column;
@@ -118,38 +135,64 @@
     align-items: center;
 }
 
+/* Linha de imagens (3 por linha) */
 .img-row {
     display: flex;
     gap: 1.2rem;
 }
 
+    /* Cada bloco de imagem + nome */
     .img-row > div {
         display: flex;
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
         font-style: italic;
         font-weight: 600;
     }
 
+    /* Imagens dos pets */
     .img-row img {
         width: 150px;
         height: 180px;
         object-fit: cover;
         border-radius: 1rem;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         transition: transform 0.3s ease;
     }
 
+        /* Efeito de flutuar ao passar o mouse */
         .img-row img:hover {
             transform: translateY(-6px);
         }
 
+/* ===============================
+   Responsivo
+   =============================== */
 @media (max-width: 1024px) {
+    /* Coloca tudo em coluna e ajusta espaçamento */
+    .depoimentos-section {
+        padding: 5rem 3rem;
+        flex-direction: column;
+    }
+
+    /* Esconde as imagens no mobile */
     .depoimentos-imagens {
         display: none;
     }
 
-    .depoimentos-section {
-        padding: 6rem 4rem;
+    /* Faz o texto ocupar toda a largura */
+    .depoimentos-content {
+        max-width: 100%;
+    }
+
+    /* Reduz o título */
+    .depoimentos-title {
+        font-size: 2rem;
+    }
+
+    /* Botão CTA ocupa mais espaço */
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
     }
 }
