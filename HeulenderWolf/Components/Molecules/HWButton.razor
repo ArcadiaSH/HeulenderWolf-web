@@ -1,5 +1,17 @@
-﻿<div class="col-@Grid">
-    <button class="bg-warning border fs-5 p-3 rounded-pill text-light fw-bold @CSSButton" type="button" @onclick="OnClick">
+﻿@if (Outline)
+{
+    <div class="col-@Grid">
+    <a class="buy-btn @CSSButton " type="button" @onclick="OnClick">
         @Texto
-    </button>
+    </a>
 </div>
+}
+else
+{
+    <div class="col-@Grid">
+        <a class="buy-btn @CSSButton " type="button" @onclick="OnClick">
+            @Texto
+        </a>
+    </div>
+}
+

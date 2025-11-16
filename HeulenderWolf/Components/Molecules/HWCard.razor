@@ -1,16 +1,25 @@
-﻿<div class="p-5">
-    <div class="shadow">
-        <h3 class="fs-2">Macho</h3>
-        <span class="fs-2">de 2.200</span>
+﻿@if (Pequeno)
+{
+    <div class="card-item card" >
+        <div class="icon-bg">
+            <img src="/img/icon1Diferenciais.png" alt="Ícone 1" class="icon" />
+        </div>
+        <h3>Garantia de Saúde</h3>
+        <p>Confie na saúde do seu filhote, temos garantia de saúde.</p>
     </div>
-    <span class="fs-1">R$ 1.599(a partir de)</span>
-    <div class="d-flex flex-column gap-2">
-        <span><i class="fa-check fa-solid"></i>Parcelamento: até 18X (ver condições)</span>
-        <span><i class="fa-check fa-solid"></i>Vacinado</span>
-        <span><i class="fa-check fa-solid"></i>Vermifugado</span>
-        <span><i class="fa-check fa-solid"></i>Contrato de compra e venda</span>
-        <span><i class="fa-check fa-solid"></i>Adestrado no tapete higiênico</span>
-        <span><i class="fa-check fa-solid"></i>Garantia de saúde</span>
-        <span><i class="fa-check fa-solid"></i>Suporte veterinário</span>
+}
+else
+{
+
+    <div class="filhote-card">
+        @CardBody
     </div>
-</div>
+
+}
+<style>
+    .card:hover {
+        border-color: #@CSSColor;
+    }
+</style>
+
+
