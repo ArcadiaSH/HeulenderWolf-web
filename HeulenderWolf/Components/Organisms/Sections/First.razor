@@ -2,14 +2,16 @@
 
 <section class="hero-section d-flex flex-wrap align-items-center justify-content-between">
     <div class="hero-text col-12 col-md-6">
-        <h1 class="hero-title">Seu novo companheiro espera por você!</h1>
-        <p class="hero-subtitle">
-            Mais que um filhote, um membro da família. <br />
-            Machos a partir de <strong>R$1.599</strong> <br />
-            Fêmeas a partir de <strong>R$2.399</strong>
+        <!-- Título principal de destaque -->
+        <h1 class="hero-title perso-title">@Title</h1>
+
+        <!-- Subtítulo com detalhes e preços -->
+        <p class="hero-subtitle perso-subtitle">
+            Mais que um filhote, um membro da família. 
         </p>
 
-        <HWButton />
+        <!-- Botão principal de chamada para ação -->
+        <HWButton ButtonConfig="ButtonModel"></HWButton>
     </div>
 
     <div class="hero-image col-12 col-md-6 position-relative text-center">
@@ -44,3 +46,19 @@
         </a>
     </div>
 </section>
+
+
+
+<style>
+    .perso-title {
+        color: @TitleFontColor;
+        font-weight: @TitleFontWeight;
+        font-size: @TitleFontSize;
+    }
+    .perso-subtitle{
+        color: @SubtitleFontColor;
+        font-weight: @SubtitleFontWeight;
+        font-size: @SubtitleFontSize;
+    }
+    
+</style>

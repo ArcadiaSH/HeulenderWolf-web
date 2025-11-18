@@ -2,11 +2,11 @@
     max-width: 250px;
     text-align: center;
     text-decoration: none;
-  /*  background-color: #fcb130;*/
-    color: #fff !important;
+   
+   
     padding: 1rem 1.4rem;
     border-radius: 30px;
-    font-weight: 700;
+    
     box-shadow: 0 4px 10px rgba(252, 177, 48, 0.4);
     transition: all 0.3s ease;
 }

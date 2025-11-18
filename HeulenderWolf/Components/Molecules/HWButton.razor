@@ -1,17 +1,32 @@
-﻿@if (Outline)
+﻿@if (ButtonConfig.Outline)
 {
-    <div class="col-@Grid">
-    <a class="buy-btn @CSSButton " type="button" @onclick="OnClick">
-        @Texto
+    <div class="col-6">
+        <a class="buy-btn perso-btn perso-outline" type="button" @onclick="OnClick">
+            @ButtonConfig.Texto
     </a>
 </div>
 }
 else
 {
-    <div class="col-@Grid">
-        <a class="buy-btn @CSSButton " type="button" @onclick="OnClick">
-            @Texto
+    <div class="col-6">
+        <a class="buy-btn perso-btn " type="button" @onclick="OnClick">
+            @ButtonConfig.Texto
         </a>
     </div>
 }
+
+<style>
+    .perso-btn{
+        background-color: @ButtonConfig.ButtonColor;
+        font-weight: @ButtonConfig.ButtonFontWeight;
+        color: @ButtonConfig.ButttonFontColor;
+    }
+
+    .btn-outline {  
+        border: 2px solid @ButtonConfig.ButtonColor;
+        color: @ButtonConfig.ButtonColor;
+        background-color: @ButtonConfig.ButttonFontColor
+        
+    }
+</style>
 
