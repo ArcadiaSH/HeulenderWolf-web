@@ -1,25 +1,24 @@
-﻿@if (Pequeno)
-{
+﻿
     <div class="card-item card" >
         <div class="icon-bg">
             <img src="/img/icon1Diferenciais.png" alt="Ícone 1" class="icon" />
         </div>
-        <h3>Garantia de Saúde</h3>
-        <p>Confie na saúde do seu filhote, temos garantia de saúde.</p>
-    </div>
-}
-else
-{
-
-    <div class="filhote-card">
-        @CardBody
+        <h3>@CardConfig.CardTitle</h3>
+        <p>@CardConfig.CardDescricao</p>
     </div>
 
-}
 <style>
-    .card:hover {
-        border-color: #@CSSColor;
+    /* Cores */
+    .icon-bg {
+        background: #34d3994D;
+        border: 4px solid rgba(52,211,153,0.15);
     }
+    /* Hover */
+    .card-item:hover {
+        border-color: #34d399;
+    }
+
+
 </style>
 
 

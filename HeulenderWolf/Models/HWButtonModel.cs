@@ -4,7 +4,7 @@ namespace HeulenderWolf.Models
 {
     public class HWButtonModel
     {
-         public string Texto { get; set; } = "Compre agora";
+         public string Texto { get; set; } = "Comprar Filhote Shih-Tzu";
          public string ButttonFontColor { get; set; } = "#fff";
          public string ButtonFontWeight { get; set; } = "700";
          public string? ButtonColor { get; set; } = "#fcb130";

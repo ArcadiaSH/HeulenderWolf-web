@@ -2,23 +2,10 @@
     max-width: 250px;
     text-align: center;
     text-decoration: none;
-   
-   
     padding: 1rem 1.4rem;
     border-radius: 30px;
-    
-    box-shadow: 0 4px 10px rgba(252, 177, 48, 0.4);
     transition: all 0.3s ease;
 }
-
-    .buy-btn:hover {
-        background-color: #fff;
-        color: #fcb130 !important;
-        border: 1px solid #fcb130;
-        transform: translateY(-2px);
-        transition: all 0.45s ease;
-    }
-
 
 .btn-outline {
     display: inline-block;
@@ -31,8 +18,4 @@
     transition: all 0.3s ease;
 }
 
-    .btn-outline:hover {
-        background-color: #fcb130;
-        color: #fff;
-        transform: translateY(-2px);
-    }
+  

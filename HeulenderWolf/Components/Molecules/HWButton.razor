@@ -1,32 +1,48 @@
 ﻿@if (ButtonConfig.Outline)
 {
-    <div class="col-6">
-        <a class="buy-btn perso-btn perso-outline" type="button" @onclick="OnClick">
-            @ButtonConfig.Texto
+
+    <a class="buy-btn perso-btn perso-outline" type="button" @onclick="OnClick">
+        @ButtonConfig.Texto
     </a>
-</div>
+
 }
 else
 {
-    <div class="col-6">
-        <a class="buy-btn perso-btn " type="button" @onclick="OnClick">
-            @ButtonConfig.Texto
-        </a>
-    </div>
+
+    <a class="buy-btn perso-btn " type="button" @onclick="OnClick">
+        @ButtonConfig.Texto
+    </a>
+
 }
 
 <style>
-    .perso-btn{
+    .perso-btn {
         background-color: @ButtonConfig.ButtonColor;
         font-weight: @ButtonConfig.ButtonFontWeight;
         color: @ButtonConfig.ButttonFontColor;
+        box-shadow: 0 4px 10px @ButtonConfig.ButtonColor;
     }
 
-    .btn-outline {  
+    .btn-outline {
         border: 2px solid @ButtonConfig.ButtonColor;
         color: @ButtonConfig.ButtonColor;
-        background-color: @ButtonConfig.ButttonFontColor
-        
+        background-color: @ButtonConfig.ButttonFontColor;
+        box-shadow: 0 4px 10px @ButtonConfig.ButtonColor;
+    }
+
+    .buy-btn:hover {
+        border: 2px solid @ButtonConfig.ButtonColor;
+        color: @ButtonConfig.ButtonColor;
+        background-color: @ButtonConfig.ButttonFontColor;
+        transform: translateY(-2px);
+        transition: all 0.45s ease;
+    }
+
+    .btn-outline:hover {
+        background-color: @ButtonConfig.ButtonColor;
+        color: @ButtonConfig.ButttonFontColor;
+        transform: translateY(-2px);
+        transition: all 0.45s ease;
     }
 </style>
 
