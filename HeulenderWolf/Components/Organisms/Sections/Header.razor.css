@@ -1,74 +1,82 @@
-﻿.site-header {
-    width: 100%;
-    position: absolute;
+﻿/* ===============================
+   SECTION: HEADER
+   =============================== */
+.site-header {
+    width: 100%; /* Ocupa toda a largura da tela */
+    position: absolute; /* Fica fixo sobre o conteúdo */
     top: 0;
     left: 0;
-    z-index: 1000;
-    background-color: transparent;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    background-color: transparent; /* Fundo transparente */
 }
 
+/* ====== CONTAINER DE NAVEGAÇÃO ====== */
 .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem 2rem; 
+    display: flex; /* Layout flexível horizontal */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Espaça logo e menu */
+    max-width: 1400px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 1rem 2rem; /* Espaçamento interno */
 }
 
+/* ====== LOGO ====== */
 .logo img {
-    height: 178px;
-    width: auto;
+    height: 178px; /* Altura padrão do logo */
+    width: auto; /* Mantém proporção */
 }
 
 .logo {
     position: relative;
-    z-index: 1100;
+    z-index: 1100; /* Mantém o logo acima de outros elementos */
 }
 
-/* MENU LINKS (DESKTOP) */
+/* ====== MENU LINKS (VERSÃO DESKTOP) ====== */
 .nav-links {
-    list-style: none;
-    display: flex;
+    list-style: none; /* Remove marcadores */
+    display: flex; /* Itens lado a lado */
     align-items: center;
-    gap: 2rem;
+    gap: 2rem; /* Espaçamento entre links */
     margin: 0;
     padding: 0;
 }
 
+    /* ESTILO DOS LINKS */
     .nav-links li a {
         color: #1c1333;
         font-weight: 600;
         text-decoration: none;
-        transition: color 0.2s ease;
+        transition: color 0.2s ease; /* Efeito suave de cor */
     }
 
+        /* HOVER DOS LINKS */
         .nav-links li a:hover {
-            color: #fcb130;
+            color: #fcb130; /* Cor amarela no hover */
         }
 
-/* BOTÃO DESTACADO */
+/* ====== BOTÃO DE DESTAQUE ====== */
 .buy-btn {
-    background-color: #fcb130;
-    color: #fff !important;
-    padding: 1rem 1.4rem;
-    border-radius: 30px;
+    background-color: #fcb130; /* Cor principal */
+    color: #fff !important; /* Texto branco */
+    padding: 1rem 1.4rem; /* Espaçamento interno */
+    border-radius: 30px; /* Bordas arredondadas */
     font-weight: 700;
-    box-shadow: 0 4px 10px rgba(252, 177, 48, 0.4);
+    box-shadow: 0 4px 10px rgba(252, 177, 48, 0.4); /* Sombra */
     transition: all 0.3s ease;
 }
 
+    /* HOVER DO BOTÃO DESTACADO */
     .buy-btn:hover {
         background-color: #fff;
         color: #fcb130 !important;
         border: 1px solid #fcb130;
-        transform: translateY(-2px);
+        transform: translateY(-2px); /* Leve elevação no hover */
         transition: all 0.45s ease;
     }
 
-/* BOTÃO HAMBÚRGUER */
+/* ====== BOTÃO HAMBÚRGUER (INVISÍVEL NO DESKTOP) ====== */
 .menu-toggle {
-    display: none;
+    display: none; /* Só aparece no mobile */
     background: none;
     border: none;
     font-size: 2.2rem;
@@ -77,12 +85,13 @@
     z-index: 1100;
 }
 
-/* MOBILE */
+/* ====== ESTILOS MOBILE ====== */
 @media (max-width: 900px) {
+    /* Container de navegação - pode receber ajustes extras */
     .nav-container {
-
     }
 
+    /* Exibe botão hambúrguer */
     .menu-toggle {
         display: block;
         font-size: 2rem;
@@ -91,34 +100,38 @@
         color: #fff;
     }
 
+    /* MENU MOBILE FECHADO (estado padrão) */
     .nav-links {
-        position: fixed;
+        position: fixed; /* Ocupa a tela toda */
         top: 0;
         left: 0;
         width: 100%;
-        height: 0;
+        height: 0; /* Altura 0 até abrir */
         background-color: #fff;
-        flex-direction: column;
+        flex-direction: column; /* Itens empilhados */
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        overflow: hidden;
+        overflow: hidden; /* Esconde conteúdo quando fechado */
         transition: all 0.4s ease;
         opacity: 0;
-        pointer-events: none;
+        pointer-events: none; /* Desativa clique */
     }
 
+        /* MENU MOBILE ABERTO */
         .nav-links.open {
-            height: 110vh;
+            height: 110vh; /* Ocupa tela toda */
             opacity: 1;
-            pointer-events: all;
+            pointer-events: all; /* Ativa cliques */
         }
 
+        /* LINKS NO MOBILE */
         .nav-links li a {
             font-size: 1.3rem;
             font-weight: 700;
         }
 
+    /* Esconde botão destacado (será substituído por um link interno ou CTA separada) */
     .buy-btn {
         display: none;
     }
