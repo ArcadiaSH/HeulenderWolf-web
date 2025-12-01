@@ -1,11 +1,12 @@
 ﻿@using HeulenderWolf.Components.Molecules
+@using HeulenderWolf.Models
 
 <!--
 ==============================
 SECTION: DEPOIMENTOS
 ==============================
 -->
-<div class="depoimentos-section">
+<div class="depoimentos-section position-relative">
 
     <!-- ===== LADO ESQUERDO: Texto e perfis ===== -->
     <div class="depoimentos-content">
@@ -147,6 +148,8 @@ SECTION: DEPOIMENTOS
 
         <!-- BOTÃO DE CHAMADA PARA AÇÃO -->
         <button class="cta-button">Comprar Filhote Shih-Tzu</button>
+        <HWButtonIcon OnClickEvent="@teste" />
+        <HWButton OnClickEvent="@teste" />
     </div>
 
     <!-- ===== LADO DIREITO: Imagens dos cachorros ===== -->
@@ -188,4 +191,14 @@ SECTION: DEPOIMENTOS
             </div>
         </div>
     </div>
+    <HWButtonIcon OnClickEvent="@teste" />
 </div>
+<HWFormModal @ref="FormModal"
+               TItem="HWButtonModel"
+               TituloHeader="teste"
+               Context="ctx">
+    <div class="row g-3">
+        @* <HWInputText ForId="SexoNome" Grid="12" Label="Nome" Placeholder="Digite o nome do sexo" MaxLength="255" Required="true" Disabled="true" /> *@
+    </div>
+</HWFormModal>
+

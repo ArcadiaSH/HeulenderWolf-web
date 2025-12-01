@@ -1,0 +1,32 @@
+﻿@typeparam TItem
+@if (IsVisible) 
+{
+<EditForm EditContext="@EditContext">    
+    <DataAnnotationsValidator />
+    <section class="modal fade show seed-modal" style="display: block;" tabindex="-1" data-bs-backdrop="static" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0 py-3">
+                    <h1 class="text-center d-block w-100 m-0 text-primary">@TituloModal</h1>
+                </div>
+                <div class="modal-body py-3">                                        
+                    @ChildContent(Entidade)                    
+                </div>
+                    <div class="modal-footer border-0 py-3">
+                        <div class="container">
+                            <div class="row justify-content-end">
+                                <div class="col-4">
+                                    <HWButton ButtonConfig="BotaoCancelarConfig" OnClickEvent="Close" />
+                                </div>
+                                 <div class="col-4">
+                                    <HWButton ButtonConfig="BotaoSalvarConfig" OnClickEvent="OnSalvar" />
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+</EditForm>                                    
+}

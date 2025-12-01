@@ -1,0 +1,33 @@
+﻿.seed-modal {
+    background-color: rgba(10, 10, 10, 0.4);
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    height: 100% !important;
+    border-radius: 0.475rem !important;
+    border: 0px solid rgba(0, 0, 0, 0.175) !important;
+}
+
+.modal-header > h1 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.modal-body {
+    padding: 1.75rem;
+}
+
+.modal-footer {
+    padding: calc(1.75rem - 0.5rem * 0.5);
+}
+
+    .modal-footer > * {
+        margin: calc(0.5rem * 0.5);
+    }
+
+@media (min-width: 1200px) {
+    .modal-header > h1 {
+        font-size: 1.75rem;
+    }
+}

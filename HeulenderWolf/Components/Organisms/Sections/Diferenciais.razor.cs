@@ -7,5 +7,11 @@ namespace HeulenderWolf.Components.Organisms.Sections
     {
         public List<CardModel> CardList { get; set; } = [];
         public CardModel CardModel { get; set; } = new();
+
+        
+        public void teste()
+        {
+
+        }
     }
 }

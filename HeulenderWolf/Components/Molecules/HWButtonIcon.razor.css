@@ -1,0 +1,27 @@
+﻿.btn-top-right {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+
+    config-btn:hover {
+        background-color: #b4d6ff59;
+    }
+
+    .config-btn:focus,
+    .config-btn:active:focus {
+        box-shadow: none;
+        border: 0;
+    }
+.config-btn {
+    max-width: 250px;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+    border-radius: 100%;
+    transition: all 0.3s ease;
+    background-color: #fcb130;
+    pointer-events:auto !important;
+}

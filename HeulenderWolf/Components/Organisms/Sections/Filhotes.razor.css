@@ -144,7 +144,7 @@
     z-index: 1;
     opacity: 0.95;
     max-width: 230px;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 /* Posições laterais */

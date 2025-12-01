@@ -7,7 +7,7 @@ namespace HeulenderWolf.Components.Molecules
     {
         #region PARAMETROS
         [Parameter] public HWButtonModel ButtonConfig { get; set; } = new();
-        [Parameter] public EventCallback Evento { get; set; }
+        [Parameter] public EventCallback OnClickEvent { get; set; }
 
         #endregion
 
@@ -18,7 +18,7 @@ namespace HeulenderWolf.Components.Molecules
         #region METODOS
         protected void OnClick()
         {
-            Evento.InvokeAsync();
+            OnClickEvent.InvokeAsync();
         }
         #endregion
     }

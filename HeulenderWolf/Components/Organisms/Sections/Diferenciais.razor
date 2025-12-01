@@ -5,8 +5,7 @@
 SECTION: DIFERENCIAIS
 ==============================
 -->
-<div class="diferenciais-container">
-
+<div class="diferenciais-container position-relative">
     <!-- ===================================== -->
     <!-- BLOCO DE CONTEÚDO PRINCIPAL DA SEÇÃO -->
     <!-- ===================================== -->
@@ -84,8 +83,24 @@ SECTION: DIFERENCIAIS
     <!-- IMAGENS DECORATIVAS DOS CÃES LATERAIS -->
     <!-- =================================== -->
     <div class="diferenciais-images">
-        <img src="/img/cachorro2.png" alt="Cachorro esquerdo" class="dog dog-left" />
+        <img src="/img/cachorro2.png" alt="Cachorro esquerdo" class="dog dog-left" /> 
         <img src="/img/cachorro1.png" alt="Cachorro direito" class="dog dog-right" />
     </div>
-
+    <button type="button" @onclick="@(() => sla())"
+            class="btn config-btn btn-top-right">
+        teste 
+    </button>
 </div> 
+
+@code {
+    private void OnTesteClick()
+    {
+        Console.WriteLine("clicou");
+    }
+
+    public async Task sla()
+    {
+        Console.WriteLine("chamou");
+        await Task.CompletedTask;
+    }
+}

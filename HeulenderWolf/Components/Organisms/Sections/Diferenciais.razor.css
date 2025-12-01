@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    pointer-events: none; /* evita clique nas imagens */
+    /*pointer-events: none;*/ /* evita clique nas imagens */
     z-index: 1;
 }
 
