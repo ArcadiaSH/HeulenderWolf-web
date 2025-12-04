@@ -23,5 +23,7 @@
     border-radius: 100%;
     transition: all 0.3s ease;
     background-color: #fcb130;
-    pointer-events:auto !important;
+    pointer-events: auto !important;
+    z-index: 10000;
+    
 }

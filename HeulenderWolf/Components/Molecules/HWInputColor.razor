@@ -1,0 +1,29 @@
+﻿@inherits InputText
+
+<div class="col-md-@Grid">
+    <label for="@ForId" class="seed-label mb-1 @RequiredClass">@Label</label>
+    @if (Disabled)
+    {
+        <input id="@ForId"
+               type="color"
+               class="@ClassCss"
+               maxlength="@MaxLength"
+               value="@CurrentValueAsString"
+               disabled="@Disabled"
+               @ref=Element />
+    }
+    else
+    {
+        <input id="@ForId"
+               type="color"
+               class="@ClassCss"
+               maxlength="@MaxLength"
+               placeholder="@Placeholder"
+               value="@CurrentValueAsString"
+               @oninput="OnInput"
+               @onchange="OnChange"
+               @attributes=AdditionalAttributes
+               @ref=Element />
+        <ValidationMessage For="() => Value" />
+    }
+</div>

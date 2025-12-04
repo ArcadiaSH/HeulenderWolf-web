@@ -1,29 +1,28 @@
 ﻿using HeulenderWolf.Models;
+using HeulenderWolf.Models.Sections;
 using Microsoft.AspNetCore.Components;
+using System.Reflection;
 
 namespace HeulenderWolf.Components.Organisms.Sections
 {
     public partial class First : ComponentBase
     {
+        #region PARAMETROS
+        [CascadingParameter]
+        public ConfiguracaoGeralModel ConfiguracaoGeralModel { get; set; }
+        #endregion
         #region PROPRIEDADES
-        #region Title
-        public string TitleFontColor { get; set; } = "#1c1333";
-        public string TitleFontWeight { get; set; } = "900";
-        public string TitleFontSize { get; set; } = "3.8rem";
-        public string Title { get; set; } = "Seu novo companheiro espera por você!";
-
-        #endregion
-        #region Subtitle
-        public string SubtitleFontColor { get; set; } = "#999";
-        public string SubtitleFontWeight { get; set; } = "";
-        public string SubtitleFontSize { get; set; } = "1.5rem";
-        #endregion
         public HWButtonModel ButtonModel { get; set; } = new();
-        
-       
-
-
+        public FirstModel Model { get; set; } = new();
+        public HWFormModal<FirstModel> FormModal { get; set; } = new();
         #endregion
+        #region METODOS
+        public async Task ShowModal()
+        {
+            FormModal.Show(Model);
+        }
+        #endregion
+
 
     }
 }

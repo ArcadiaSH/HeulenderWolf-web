@@ -1,4 +1,5 @@
 ﻿@using HeulenderWolf.Components.Molecules
+@using HeulenderWolf.Models.Sections
 
 <!--
 ==============================
@@ -10,7 +11,7 @@ SECTION: PRIMEIRA SECTION
     <!-- BLOCO DE TEXTO PRINCIPAL -->
     <div class="hero-text col-12 col-md-6">
         <!-- Título principal de destaque -->
-        <h1 class="hero-title perso-title">@Title</h1>
+        <h1 class="hero-title perso-title">@Model.</h1>
 
         <!-- Subtítulo com detalhes e preços -->
         <p class="hero-subtitle perso-subtitle">
@@ -58,21 +59,14 @@ SECTION: PRIMEIRA SECTION
             <i class="bi bi-whatsapp"></i>
         </a>
     </div>
-    <HWButtonIcon />
+    <HWButtonIcon OnClickEvent="ShowModal" />
 </section>
+<HWFormModal @ref="FormModal"
+             TItem="FirstModel"
+             TituloHeader="Edição da primeira seção"
+             Context="ctx">
+    <div class="row g-3">
+        <HWInputText Label="Titulo daq seção" Grid="6"  />
 
-
-
-<style>
-    .perso-title {
-        color: @TitleFontColor;
-        font-weight: @TitleFontWeight;
-        font-size: @TitleFontSize;
-    }
-    .perso-subtitle{
-        color: @SubtitleFontColor;
-        font-weight: @SubtitleFontWeight;
-        font-size: @SubtitleFontSize;
-    }
-    
-</style>
+    </div>
+</HWFormModal>

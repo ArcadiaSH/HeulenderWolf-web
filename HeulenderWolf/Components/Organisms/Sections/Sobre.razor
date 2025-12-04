@@ -29,7 +29,7 @@ SECTION: SOBRE NÓS
                     <i class="fa-solid fa-paw"></i>
                     <span>
                         <i class="bi bi-stars"></i>
-                        <span class="experiencia-badge-5">5+ </span><br />
+                        <span class="experiencia-badge-5">@Model.AnosExperiencia + </span><br />
                         Anos de Experiência
                     </span>
                 </div>
@@ -38,15 +38,15 @@ SECTION: SOBRE NÓS
 
         <!-- ===== COLUNA DIREITA: texto descritivo ===== -->
         <div class="sobre-conteudo">
-            <h4 class="sobre-subtitulo">SOBRE NÓS</h4>
-            <h2 class="sobre-titulo">Canil Recanto dos Guardiões</h2>
+            <h4 class="sobre-subtitulo">@Model.Titulo</h4>
+            <h2 class="sobre-titulo">@Model.SubTitulo</h2>
 
             <!-- Parágrafo 1 -->
             <p>
                @Model.SobreNosTexto
             </p>
 
-            <!-- Botão de ação (CTA) -->]
+            <!-- Botão de ação (CTA) -->
            <HWButton ButtonConfig="ButtonModel"></HWButton>
         </div>
     </div>
@@ -54,9 +54,11 @@ SECTION: SOBRE NÓS
 </section>
 <HWFormModal @ref="FormModal"
              TItem="SobreModel"
-             TituloHeader="teste"
+             TituloHeader="Edição da seção sobre nós"
              Context="ctx">
     <div class="row g-3">
+        <HWInputText Grid="6" ForId="SobreTitulo" Label="Titulo da seção" @bind-Value="ctx.Titulo"/>
+        <HWInputText Grid="6" ForId="SobreSubTitulo" Label="sub titulo da seção" @bind-Value="ctx.SubTitulo" />
         <HWInputTextArea @bind-Value="ctx.SobreNosTexto" Label="Texto do Sobre Nós" MaxLength="1000"/>
     </div>
 </HWFormModal>

@@ -1,5 +1,6 @@
 ﻿@rendermode InteractiveServer
 @using HeulenderWolf.Components.Molecules
+@using HeulenderWolf.Models
 
 <!--
 ==============================
@@ -22,6 +23,7 @@ SECTION: HEADER
 
         <!-- LISTA DE LINKS DO MENU -->
         <ul class="nav-links @(isMenuOpen ? "open" : "")">
+            <li><a href="#Configuracao" @onclick="ShowModal">Configuração geral</a></li>
             <li><a href="#filhotes" @onclick="CloseMenu">Filhotes</a></li>
             <li><a href="#sobre" @onclick="CloseMenu">Sobre Nós</a></li>
             <li><a href="#diferenciais" @onclick="CloseMenu">Diferenciais</a></li>
@@ -34,3 +36,13 @@ SECTION: HEADER
         </ul>
     </nav>
 </header>
+<HWFormModal @ref="FormModal"
+             TItem="ConfiguracaoGeralModel"
+             TituloHeader="Configuração geral"
+             Context="ctx">
+    <div class="row g-3">
+        <HWInputColor @bind-Value="ctx.CorPrincipal" Grid="4" Label="Cor principal do sistema"/>
+        <HWInputText @bind-Value="ctx.textoBotao" Grid="8" Label="Texto dos botões do sistema"/>
+    </div>
+</HWFormModal>
+
