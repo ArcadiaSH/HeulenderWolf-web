@@ -1,0 +1,34 @@
+﻿@inherits InputText
+
+<div class="col-md-@Grid">  
+    <label for="@ForId" class="seed-label mb-1 @RequiredClass">@Label</label>    
+
+    @if (Disabled)
+    {
+        <textarea   id="@ForId"
+                    class="@ClassCss"
+                    maxlength="@MaxLength"
+                    disabled="@Disabled"
+                    rows="@Rows"
+                    @ref=Element>
+
+            @CurrentValueAsString
+        </textarea>
+    } 
+    else
+    {
+        <textarea   id="@ForId"
+                    class="@ClassCss"
+                    maxlength="@MaxLength"
+                    placeholder="@Placeholder"
+                    rows="@Rows"
+                    @oninput="OnInput"
+                    @onchange="OnChange"
+                    @attributes="AdditionalAttributes"
+                    @ref="Element">
+
+            @CurrentValueAsString
+        </textarea>
+        <ValidationMessage For="() => Value" />
+    }
+</div>

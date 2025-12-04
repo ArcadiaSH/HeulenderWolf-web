@@ -1,11 +1,12 @@
 ﻿@using HeulenderWolf.Components.Molecules
+@using HeulenderWolf.Models.Sections
 
 <!-- 
 ==============================
 SECTION: SOBRE NÓS
 ============================== 
 -->
-<section class="sobre-section">
+<section class="sobre-section position-relative">
     <div class="sobre-container">
 
         <!-- ===== COLUNA ESQUERDA: imagens + selo de experiência ===== -->
@@ -42,26 +43,21 @@ SECTION: SOBRE NÓS
 
             <!-- Parágrafo 1 -->
             <p>
-                No coração do ABC, destaca-se o Canil Recanto dos Guardiões, especializado nos encantadores
-                Shih Tzu de alta qualidade. Aqui, você não está apenas comprando um filhote, mas levando
-                para casa um amigo leal de quatro patas que irá se tornar parte integrante de sua família.
-            </p>
-
-            <!-- Parágrafo 2 -->
-            <p>
-                Se você sonha com um Shih Tzu para trazer alegria e companheirismo, está no lugar certo.
-                Com o respaldo da nossa clínica veterinária, garantimos a saúde do seu Shih Tzu desde o
-                primeiro dia. E para sua comodidade, realizamos entregas seguras em todo o estado de São Paulo.
-            </p>
-
-            <!-- Parágrafo 3 -->
-            <p>
-                No Recanto dos Guardiões, o Shih Tzu dos seus sonhos está à sua espera, pronto para iluminar seus dias!
+               @Model.SobreNosTexto
             </p>
 
             <!-- Botão de ação (CTA) -->]
            <HWButton ButtonConfig="ButtonModel"></HWButton>
         </div>
     </div>
-    <HWButtonIcon />
+    <HWButtonIcon OnClickEvent="ShowModal" />
 </section>
+<HWFormModal @ref="FormModal"
+             TItem="SobreModel"
+             TituloHeader="teste"
+             Context="ctx">
+    <div class="row g-3">
+        <HWInputTextArea @bind-Value="ctx.SobreNosTexto" Label="Texto do Sobre Nós" MaxLength="1000"/>
+    </div>
+</HWFormModal>
+
