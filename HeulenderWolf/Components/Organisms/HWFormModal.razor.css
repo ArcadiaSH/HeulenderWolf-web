@@ -4,7 +4,7 @@
 }
 
 .modal-content {
-    height: 100% !important;
+    height: fit-content;
     border-radius: 0.475rem !important;
     border: 0px solid rgba(0, 0, 0, 0.175) !important;
 }
@@ -19,7 +19,7 @@
 }
 
 .modal-footer {
-    padding: calc(1.75rem - 0.5rem * 0.5);
+    /*padding: calc(1.75rem - 0.5rem * 0.5);*/
 }
 
     .modal-footer > * {
