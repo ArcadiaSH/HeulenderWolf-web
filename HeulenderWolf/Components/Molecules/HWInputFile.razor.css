@@ -12,10 +12,6 @@
     min-height: 150px;
 }
 
-    .seed-file-area:hover {
-        border: 2px solid var(--seed-primary);
-    }
-
 ::deep .seed-input-file {
     position: absolute !important;
     width: 100% !important;

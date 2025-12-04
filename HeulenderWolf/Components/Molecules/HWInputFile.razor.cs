@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+
 namespace HeulenderWolf.Components.Molecules
 {
     public partial class HWInputFile : ComponentBase
@@ -45,9 +46,18 @@ namespace HeulenderWolf.Components.Molecules
 
         protected async Task InputFileChange(InputFileChangeEventArgs e)
         {
-            if (e.FileCount > 1)
+            if (Multiple)
             {
-                Arquivos = [.. e.GetMultipleFiles()];
+
+                IReadOnlyList<IBrowserFile> novosArquivos = e.GetMultipleFiles();
+
+                foreach (IBrowserFile arquivo in novosArquivos)
+                {
+                    if (!Arquivos.Any(a => a.Name == arquivo.Name && a.Size == arquivo.Size))
+                    {
+                        Arquivos.Add(arquivo);
+                    }
+                }
             }
             else
             {
