@@ -1,0 +1,37 @@
+﻿<div class="container">
+    <div class="@ClassCss" @ondragenter="HandleDragEnter" @ondragleave="HandleDragLeave">        
+        
+        <InputFile class="seed-input-file" 
+                   OnChange="InputFileChange" 
+                   @ondragenter="HandleDragEnter" 
+                   @ondragleave="HandleDragLeave" 
+                   multiple="@MultiplosArquivos" />
+
+        <div class="d-flex flex-column align-items-center mb-2">
+            
+            <span class="py-2"><i class="fa-solid fa-upload fs-1"></i></span>
+            <span class="py-1 sp-upload">@TituloArquivos</span>
+            <span class="py-0 sp-tamanho">@TamanhoMaximo</span>
+            <span class="py-0 sp-formato">@FormatoPermitido</span>
+            <span class="py-2 px-4 sp-selecao">@SelecioneArquivo</span>
+
+            @if (Arquivos != null && Arquivos.Count > 0)
+            {
+                <div class="file-list">
+                    <ul class="d-flex flex-wrap mt-1">
+                        @foreach (var item in Arquivos)
+                        {
+                            <li>
+                                <div class="file-item">
+                                    <span class="file-item-texto">@($"{item.Name} {ObterTamanhoFormatado(item.Size)}")</span>                                    
+                                    <span class="file-item-icone" @onclick="()=> RemoverAnexo(item)"><i class="fa-solid fa-xmark fs-4"></i></span>
+                                </div>
+                            </li>
+                        }                        
+                    </ul>
+                </div>                
+            }
+
+        </div>      
+    </div>
+</div>

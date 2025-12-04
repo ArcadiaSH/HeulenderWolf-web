@@ -9,9 +9,6 @@ namespace HeulenderWolf.Components.Organisms.Sections
         public CardModel CardModel { get; set; } = new();
 
         
-        public void teste()
-        {
-
-        }
+       
     }
 }

@@ -148,8 +148,6 @@ SECTION: DEPOIMENTOS
 
         <!-- BOTÃO DE CHAMADA PARA AÇÃO -->
         <button class="cta-button">Comprar Filhote Shih-Tzu</button>
-        <HWButtonIcon OnClickEvent="@teste" />
-        <HWButton OnClickEvent="@teste" />
     </div>
 
     <!-- ===== LADO DIREITO: Imagens dos cachorros ===== -->
@@ -191,14 +189,19 @@ SECTION: DEPOIMENTOS
             </div>
         </div>
     </div>
-    <HWButtonIcon OnClickEvent="@teste" />
+    <HWButtonIcon OnClickEvent="ShowModal" />
 </div>
 <HWFormModal @ref="FormModal"
                TItem="HWButtonModel"
                TituloHeader="teste"
                Context="ctx">
     <div class="row g-3">
-        @* <HWInputText ForId="SexoNome" Grid="12" Label="Nome" Placeholder="Digite o nome do sexo" MaxLength="255" Required="true" Disabled="true" /> *@
+        <HWInputFile Tamanho="50 MB"
+                           Tipos=".xlsx,.csv"
+                           @key="_fileInputKey"
+                           OnInputFileChange="OnFileChange"
+        Multiple="true"> 
+            </HWInputFile>
     </div>
 </HWFormModal>
 

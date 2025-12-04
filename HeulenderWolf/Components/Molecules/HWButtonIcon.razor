@@ -1,12 +1,4 @@
-﻿<button @onclick="@sla"
+﻿<button @onclick="@OnClick"
         class="btn config-btn btn-top-right">
     <i class=" bi @Icone align-top fs-4"></i>
 </button>
-<a @onclick="teste">testeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a>
-@code{
-    private async Task teste2()
-    {
-        Console.WriteLine("CLICOU NO TESTE"); // teste
-        await OnClickEvent.InvokeAsync();
-    }
-}

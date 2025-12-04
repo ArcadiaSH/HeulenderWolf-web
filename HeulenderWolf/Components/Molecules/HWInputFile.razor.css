@@ -1,0 +1,83 @@
+﻿.seed-file-area {
+    border: 2px dashed #C1C1C1;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    min-height: 150px;
+}
+
+    .seed-file-area:hover {
+        border: 2px solid var(--seed-primary);
+    }
+
+::deep .seed-input-file {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    z-index:10;
+}
+
+.fa-upload {
+    color: var(--seed-primary);
+    margin: 12px 0 6px 0;
+}
+
+.sp-upload {
+    color: #666;
+    font-weight: bold;
+}
+
+.sp-tamanho,
+.sp-formato {
+    font-size:0.9rem;
+}
+
+.sp-selecao {
+    border: 1px solid silver;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-weight: bold;
+    color: #666;
+}
+
+.file-list {
+    z-index: 20;
+    width: 100%;
+}
+
+    .file-list ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap:10px;
+    }
+
+.file-item {
+    display: inline-flex;
+    align-items: center;
+    background: #EEF6FF;
+    color: #3E97FF;
+    border-radius: 0.5rem;
+}    
+
+.file-item-texto {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 0px 8px 12px;
+}
+
+.file-item-icone {
+    padding: 6px 12px 3px 12px;
+}
+
+    .file-item-icone i {
+        color: #1967D2;
+    }

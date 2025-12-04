@@ -12,12 +12,9 @@ namespace HeulenderWolf.Components.Molecules
         [Parameter]
         public EventCallback OnClickEvent { get; set; }
 
-        public void sla() => OnClickEvent.InvokeAsync();
 
-
-        private async Task teste()
+        private async Task OnClick()
         {
-            Console.WriteLine("CLICOU NO TESTE"); // teste
             await OnClickEvent.InvokeAsync();
         }
         #endregion
