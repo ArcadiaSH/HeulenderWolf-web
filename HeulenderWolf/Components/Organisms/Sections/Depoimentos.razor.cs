@@ -40,6 +40,7 @@ namespace HeulenderWolf.Components.Organisms.Sections
 
         public HWFormModal<HWButtonModel> FormModal { get; set; } = new();
         public HWButtonModel ButtonModel { get; set; } = new();
+        private string ImagemBase64 { get; set; } = string.Empty;
         #endregion
         public async Task ShowModal()
         {
@@ -66,14 +67,19 @@ namespace HeulenderWolf.Components.Organisms.Sections
             Arquivo = ms.ToArray();
             ArquivoNome = ArquivoSelecionado.Name;
 
-            //if (!await ProcessarArquivo())
-            //{
-            //    _isLoading = false;
-            //    ResetarFormulario();
-            //    return;
-            //}
 
             _isLoading = false;
+            var buffer = new byte[ArquivoSelecionado.Size];
+            await ArquivoSelecionado.OpenReadStream().ReadAsync(buffer);
+
+            // Descobre o tipo MIME (image/png, image/jpeg...)
+            var tipo = ArquivoSelecionado.ContentType;
+
+            // Converte para base64
+            var base64 = Convert.ToBase64String(buffer);
+
+            // Monta o src completo
+            ImagemBase64 = $"data:{tipo};base64,{base64}";
 
             await OnArquivoSelecionado.InvokeAsync((Arquivo, ArquivoNome, IsTipoCurso));
         }
