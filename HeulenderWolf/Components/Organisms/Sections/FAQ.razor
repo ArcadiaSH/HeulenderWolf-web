@@ -1,4 +1,5 @@
 ﻿@using HeulenderWolf.Components.Molecules
+@using HeulenderWolf.Models
 
 <!--
 ==============================
@@ -18,130 +19,14 @@ SECTION: FAQ
         <div class="faq-content">
             <div class="accordion" id="faqAccordion">
 
-                <!-- Pergunta 1 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq1">
-                        <button class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapse1">
-                            Vocês oferecem garantia de saúde para os Shih-Tzus vendidos?
-                        </button>
-                    </h2>
-
-                    <div id="collapse1"
-                         class="accordion-collapse collapse"
-                         data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sim, oferecemos uma garantia de saúde abrangente para nossos Shih-Tzus.
-                            Além de suporte veterinário em nossa clínica própria.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pergunta 2 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq2">
-                        <button class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapse2">
-                            Os Shih-Tzus são fáceis de treinar?
-                        </button>
-                    </h2>
-
-                    <div id="collapse2"
-                         class="accordion-collapse collapse"
-                         data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Os Shih-Tzus são inteligentes e geralmente respondem bem ao treinamento positivo e consistente.
-                            Além disso, nossos filhotes já são treinados para fazer as necessidades no tapete higiênico ou jornal.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pergunta 3 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq3">
-                        <button class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapse3">
-                            Os Shih-Tzus são bons para famílias com crianças?
-                        </button>
-                    </h2>
-
-                    <div id="collapse3"
-                         class="accordion-collapse collapse"
-                         data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sim, os Shih-Tzus são conhecidos por serem amigáveis, amorosos e se darem bem com crianças e outros animais de estimação.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pergunta 4 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq4">
-                        <button class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapse4">
-                            Os filhotes são vacinados e vermifugados?
-                        </button>
-                    </h2>
-
-                    <div id="collapse4"
-                         class="accordion-collapse collapse"
-                         data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sim, todos os nossos filhotes são vacinados e vermifugados antes da entrega,
-                            além de nossa garantia e suporte veterinário.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pergunta 5 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq5">
-                        <button class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapse5">
-                            Como posso realizar a compra de um filhote?
-                        </button>
-                    </h2>
-
-                    <div id="collapse5"
-                         class="accordion-collapse collapse"
-                         data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Você pode clicar em “Comprar Agora” para ser direcionado ao nosso contato no WhatsApp,
-                            onde poderá obter mais informações e realizar sua compra.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pergunta 6 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq6">
-                        <button class="accordion-button collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapse6">
-                            Como adquirir microchip e pedigree?
-                        </button>
-                    </h2>
-
-                    <div id="collapse6"
-                         class="accordion-collapse collapse"
-                         data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Microchip e pedigree estão disponíveis mediante consulta de condição.
-                            Entre em contato para mais informações.
-                        </div>
-                    </div>
-                </div>
+                @foreach (var item in FAQItems)
+                {
+                    <HWAccordionItem Item="@item" 
+                                     AccordionId="faqAccordion"
+                                     CorFundo="@Configuracao.CorFundo"
+                                     CorTexto="@Configuracao.CorTexto"
+                                     OnToggle="OnToggleItem" />
+                }
 
             </div>
         </div>
@@ -157,7 +42,109 @@ SECTION: FAQ
          =========================== -->
     <img src="img/cachorro1.png" alt="Cachorro esquerdo" class="faq-dog dog-left">
     <img src="img/cachorro2.png" alt="Cachorro direito" class="faq-dog dog-right">
-    <HWButtonIcon />
+    <HWButtonIcon OnClickEvent="@ShowModal" />
 </section>
+
+<!-- Modal para Configurações Globais (Cores e Gerenciamento) -->
+<HWFormModal @ref="FormModalConfig"
+             TItem="FAQConfiguracao"
+             TituloHeader="Configurações do FAQ"
+             OnSalvarEvent="@OnSalvarConfiguracao"
+             Context="config">
+    <div class="row g-3">
+
+        <!-- Seção de Gerenciamento -->
+        <div class="col-12 mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="text-primary mb-0">Gerenciar Perguntas</h5>
+                <button type="button" 
+                        class="btn btn-success btn-sm" 
+                        @onclick="AdicionarNovo">
+                    <i class="bi bi-plus-circle"></i> Adicionar Nova
+                </button>
+            </div>
+            <div class="faq-list">
+                @foreach (var item in FAQItems.OrderBy(f => f.Ordem))
+                {
+                    <div class="faq-item-card">
+                        <div class="faq-item-content">
+                            <span class="faq-order">@item.Ordem</span>
+                            <span class="faq-question">@item.Pergunta</span>
+                        </div>
+                        <div class="faq-item-actions">
+                            <button type="button" 
+                                    class="btn btn-sm btn-outline-primary" 
+                                    @onclick="() => MoverParaCima(item)"
+                                    disabled="@(FAQItems.IndexOf(item) == 0)"
+                                    title="Mover para cima">
+                                <i class="bi bi-arrow-up"></i>
+                            </button>
+                            <button type="button" 
+                                    class="btn btn-sm btn-outline-primary" 
+                                    @onclick="() => MoverParaBaixo(item)"
+                                    disabled="@(FAQItems.IndexOf(item) == FAQItems.Count - 1)"
+                                    title="Mover para baixo">
+                                <i class="bi bi-arrow-down"></i>
+                            </button>
+                            <button type="button" 
+                                    class="btn btn-sm btn-outline-warning" 
+                                    @onclick="() => EditarFAQ(item)"
+                                    title="Editar">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button type="button" 
+                                    class="btn btn-sm btn-outline-danger" 
+                                    @onclick="() => ExcluirFAQ(item)"
+                                    title="Excluir">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+   
+        <!-- Seção de Cores -->
+        <div class="col-12">
+            <h5 class="text-primary mb-3">Personalização de Cores</h5>
+        </div>
+
+        <HWInputColor @bind-Value="config.CorFundo"
+                      Grid="6"
+                      ForId="corFundoGlobal"
+                      Label="Cor de Fundo (Todos os Itens)" />
+
+        <HWInputColor @bind-Value="config.CorTexto"
+                      Grid="6"
+                      ForId="corTextoGlobal"
+                      Label="Cor do Texto (Todos os Itens)" />
+    </div>
+</HWFormModal>
+
+<!-- Modal para Adicionar/Editar Item Individual -->
+<HWFormModal @ref="FormModalItem"
+             TItem="FAQItem"
+             TituloHeader="@(IsEditMode ? "Editar Pergunta" : "Adicionar Nova Pergunta")"
+             OnSalvarEvent="@OnSalvarFAQ"
+             Context="item">
+    <div class="row g-3">
+        <HWInputText @bind-Value="item.Pergunta"
+                     Grid="12"
+                     ForId="pergunta"
+                     Label="Pergunta"
+                     Placeholder="Digite a pergunta"
+                     MaxLength="500"
+                     Required="true" />
+
+        <HWInputTextArea @bind-Value="item.Resposta"
+                         Grid="12"
+                         ForId="resposta"
+                         Label="Resposta"
+                         Placeholder="Digite a resposta"
+                         MaxLength="2000"
+                         Rows="5"
+                         Required="true" />
+    </div>
+</HWFormModal>
 
 

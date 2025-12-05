@@ -37,43 +37,6 @@
     margin-bottom: 2.5rem;
 }
 
-/* --- Cada item do Accordion --- */
-.accordion-item {
-    border: none; /* Remove bordas */
-    margin-bottom: 0.5rem;
-    overflow: hidden;
-}
-
-/* --- Botão do Accordion (cabeçalho do item) --- */
-.accordion-button {
-    background-color: #8ce1c957; /* Verde claro translúcido */
-    color: #fbbf24; /* Texto amarelo */
-    font-weight: 700;
-    border: none;
-    box-shadow: none;
-}
-
-    /* --- Estado aberto (ativo) do botão do accordion --- */
-    .accordion-button:not(.collapsed) {
-        color: #fbbf24; /* Mantém a cor do texto */
-        background-color: #f0fffa; /* Fundo mais claro */
-        box-shadow: none; /* Remove sombra padrão */
-    }
-
-    /* --- Remove o ícone padrão de seta do Bootstrap --- */
-    .accordion-button::after {
-        display: none !important;
-    }
-
-/* --- Corpo (conteúdo expandido) do Accordion --- */
-.accordion-body {
-    background-color: #f8fcff; /* Fundo branco azulado */
-    color: #444; /* Texto cinza escuro */
-    text-align: left;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
 /* --- Botão de Chamada para Ação (CTA) --- */
 .cta-button {
     background-color: #fbbf24; /* Amarelo */
@@ -116,6 +79,85 @@
 }
 
 /* ===============================
+   FAQ MANAGEMENT LIST
+   =============================== */
+.faq-list {
+    max-height: 210px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background: #f9f9f9;
+}
+
+.faq-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+    .faq-item-card:hover {
+        border-color: #fbbf24;
+        box-shadow: 0 2px 8px rgba(251, 191, 36, 0.2);
+    }
+
+    .faq-item-card.active {
+        border-color: #fbbf24;
+        background: #fff9e6;
+    }
+
+.faq-item-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    overflow: hidden;
+}
+
+.faq-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    background: #fbbf24;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.faq-question {
+    flex: 1;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.faq-item-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+    .faq-item-actions button {
+        min-width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+/* ===============================
    RESPONSIVIDADE
    =============================== */
 @media (max-width: 1024px) {
@@ -129,5 +171,17 @@
 
     .faq-dog {
         display: none; /* Remove imagens em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-item-card {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .faq-item-actions {
+        width: 100%;
+        justify-content: center;
     }
 }

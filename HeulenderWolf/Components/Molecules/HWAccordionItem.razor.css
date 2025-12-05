@@ -1,0 +1,40 @@
+/* ===============================
+   COMPONENT: HWAccordionItem
+   =============================== */
+
+/* --- Cada item do Accordion --- */
+.accordion-item {
+    border: none; /* Remove bordas */
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+/* --- Botão do Accordion (cabeçalho do item) --- */
+.accordion-button {
+    background-color: #8ce1c957; /* Verde claro translúcido */
+    color: #fbbf24; /* Texto amarelo */
+    font-weight: 700;
+    border: none;
+    box-shadow: none;
+}
+
+    /* --- Estado aberto (ativo) do botão do accordion --- */
+    .accordion-button:not(.collapsed) {
+        color: #fbbf24; /* Mantém a cor do texto */
+        background-color: #f0fffa; /* Fundo mais claro */
+        box-shadow: none; /* Remove sombra padrão */
+    }
+
+    /* --- Remove o ícone padrão de seta do Bootstrap --- */
+    .accordion-button::after {
+        display: none !important;
+    }
+
+/* --- Corpo (conteúdo expandido) do Accordion --- */
+.accordion-body {
+    background-color: #f8fcff; /* Fundo branco azulado */
+    color: #444; /* Texto cinza escuro */
+    text-align: left;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
