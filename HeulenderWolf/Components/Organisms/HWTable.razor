@@ -1,0 +1,38 @@
+﻿@attribute [CascadingTypeParameter(nameof(TItem))]
+@typeparam TItem
+<div class="px-2 pt-2 seed-painel-table-Lista ">
+    <div class="px-2 seed-scroll seed-table-Lista">
+        <table class="table">
+            <thead>
+                <tr class="seed-table-fixo">
+                    @Colunas(default(TItem))
+                </tr>
+            </thead>
+            <tbody>
+                @if (Dados.Count > 0)
+                {
+                    @for (int i = 0; i < Dados.Count; i++)
+                    {
+                        var item = Dados[i];
+                        var indice = i;
+                        <CascadingValue Value="item">
+                            <tr class="">
+                                @Colunas(item)
+                            </tr>
+                        </CascadingValue>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="@ColSpan" class="text-center">Nenhum registro encontrado</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @if (Footer != null)
+        @Footer(default(TItem))
+    
+
+    </div>

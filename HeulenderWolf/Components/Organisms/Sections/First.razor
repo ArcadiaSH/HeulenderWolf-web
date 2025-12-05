@@ -11,21 +11,22 @@ SECTION: PRIMEIRA SECTION
     <!-- BLOCO DE TEXTO PRINCIPAL -->
     <div class="hero-text col-12 col-md-6">
         <!-- Título principal de destaque -->
-        <h1 class="hero-title perso-title">@Model.</h1>
+        <h1 class="hero-title perso-title">@Model.Titulo</h1>
 
         <!-- Subtítulo com detalhes e preços -->
         <p class="hero-subtitle perso-subtitle">
-            Mais que um filhote, um membro da família. 
+            @Model.Descricao 
         </p>
 
         <!-- Botão principal de chamada para ação -->
-        <HWButton ButtonConfig="ButtonModel"></HWButton>
+        <HWButton ButtonConfig="ButtonModel"   OnClickEvent="@(() => OnClickEvent.InvokeAsync())"></HWButton>
     </div>
 
     <!-- BLOCO DE IMAGEM PRINCIPAL E INSÍGNIAS -->
     <div class="hero-image col-12 col-md-6 position-relative text-center">
         <!-- Imagem principal (mulher com filhote) -->
         <img src="/img/mulher_e_cao.png" alt="Mulher com filhote Shih-Tzu" class="img-fluid main-dog-img" />
+        @* <img src="@Img.OpenReadStream()"/> *@
 
         <!-- INSÍGNIA: número de clientes satisfeitos -->
         <div class="hero-badge badge-clientes">
@@ -66,7 +67,8 @@ SECTION: PRIMEIRA SECTION
              TituloHeader="Edição da primeira seção"
              Context="ctx">
     <div class="row g-3">
-        <HWInputText Label="Titulo daq seção" Grid="6"  />
-
+        <HWInputText Label="Titulo da primeira seção" Grid="6" @bind-Value="Model.Titulo"/>
+        <HWInputText Label="Descrição da primeira seção" Grid="6" @bind-Value="Model.Descricao" />
+        <HWInputFile OnInputFileChange="TesteImagem"></HWInputFile>
     </div>
 </HWFormModal>

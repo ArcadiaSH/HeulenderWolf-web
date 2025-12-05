@@ -1,0 +1,219 @@
+﻿.seed-table-height-170 {
+    height: calc(100vh - 170px);
+}
+
+.seed-table-height-145 {
+    height: calc(100vh - 145px);
+}
+
+/*#region *************** Table-Lista ************************************/
+.seed-painel-table-Lista {
+    height: 100%;
+}
+
+.seed-table-Lista {
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.seed-table-Lista > table {
+    border-spacing: 0;
+}
+
+.seed-table-Lista > table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem !important;
+}
+
+.seed-table-Lista > table > thead {
+    line-height: 16px;
+    letter-spacing: 0.05em;
+}
+
+.seed-table-Lista > table > thead > tr > ::deep th {
+    border: 0 none !important;
+    white-space: nowrap;
+    font-size: 1rem;
+    padding-top: 0.7rem !important;
+}
+
+.seed-table-Lista > table > tbody > tr > ::deep td {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.seed-table-Lista > table > tbody > tr:last-child ::deep td {
+    border-bottom: 0 none !important;
+}
+/*#endregion */
+
+/*#region *************** Table-Pesquisa ************************************/
+
+.seed-table-Pesquisa {
+    height: calc(100vh - 340px);
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.seed-table-Pesquisa > table {
+    border-spacing: 0;
+}
+
+.seed-table-Pesquisa > table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem !important;
+}
+
+.seed-table-Pesquisa > table > thead {
+    line-height: 16px;
+    letter-spacing: 0.05em;
+}
+
+.seed-table-Pesquisa > table > thead > tr > ::deep th {
+    border: 0 none !important;
+    white-space: nowrap;
+    font-size: 1rem;
+    padding-top: 0.7rem !important;
+}
+
+    .seed-table-Pesquisa > table > tbody > tr > ::deep td {
+        white-space: nowrap;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+
+.seed-tr-Pesquisa:hover > ::deep td {
+    background-color: #deecff;
+    color: var(--seed-primary);
+    cursor: pointer;
+    line-height: 30px;
+}
+
+.seed-table-Pesquisa > table > tbody > tr:last-child ::deep td {
+    border-bottom: 0 none !important;
+}
+/*#endregion */
+
+/*#region *************** Table-Modal ************************************/
+
+.seed-table-Modal {
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.seed-table-Modal > table {
+    border-spacing: 0;
+}
+
+.seed-table-Modal > table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem !important;
+}
+
+.seed-table-Modal > table > thead {
+    line-height: 16px;
+    letter-spacing: 0.05em;
+}
+
+.seed-table-Modal > table > thead > tr > ::deep th {
+    border: 0 none !important;
+    white-space: nowrap;
+    font-size: 1rem;
+    padding-top: 0.7rem !important;
+}
+
+    .seed-table-Modal > table > tbody > tr > ::deep td {
+        white-space: nowrap;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+
+.seed-tr-Modal:hover > ::deep td {
+    background-color: #deecff;
+    color: var(--seed-primary);
+    cursor: pointer;
+    line-height: 30px;
+}
+
+.seed-table-Modal > table > tbody > tr:last-child ::deep td {
+    border-bottom: 0 none !important;
+}
+/*#endregion */
+
+.seed-table-fixo {
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    box-shadow: 0px 1px 0px var(--seed-gray-550);
+}
+/*#region *************** Table-Formulario ************************************/
+.seed-table-Formulario {
+    height: calc(100vh - 425px);
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+    .seed-table-Formulario > table {
+        border-spacing: 0;
+    }
+
+        .seed-table-Formulario > table > :not(caption) > * > * {
+            padding: 0.5rem 0.5rem !important;
+        }
+
+        .seed-table-Formulario > table > thead {
+            line-height: 16px;
+            letter-spacing: 0.05em;
+        }
+
+            .seed-table-Formulario > table > thead > tr > ::deep th {
+                border: 0 none !important;
+                white-space: nowrap;
+                font-size: 1rem;
+                padding-top: 0.7rem !important;
+            }
+
+        .seed-table-Formulario > table > tbody > tr > ::deep td {
+            white-space: nowrap;
+            vertical-align: middle;
+            line-height: 30px;
+        }
+
+.seed-tr-Formulario:hover > ::deep td {
+    background-color: #deecff;
+    color: var(--seed-primary);
+    cursor: pointer;
+    line-height: 30px;
+}
+/*#endregion */
+.seed-table tfoot tr td {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*#region *************** Table-Arrastável ************************************/
+
+.seed-tr-arrastavel {
+    transition: background-color 0.2s;
+}
+
+.seed-tr-arrastavel:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.icone-arrastar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #6c757d;
+}
+
+.icone-arrastar:hover {
+    color: #343a40;
+}
+
+tr.dragging-over {
+    background-color: rgba(0, 123, 255, 0.1);
+    border: 1px dashed #007bff;
+}

@@ -7,6 +7,8 @@ namespace HeulenderWolf.Components.Organisms.Sections
     public partial class Sobre : ComponentBase
     {
         #region PARAMETRO
+        [Parameter]
+        public EventCallback OnClickEvent { get; set; }
         [CascadingParameter]
         public ConfiguracaoGeralModel ConfiguracaoGeral { get; set; }
         #endregion

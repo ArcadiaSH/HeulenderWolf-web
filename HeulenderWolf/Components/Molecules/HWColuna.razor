@@ -1,0 +1,29 @@
+﻿@typeparam TItem
+
+@if (Dados == null)
+{
+
+    <th class="@CssClassTH">@Descricao</th>
+}
+else
+{
+    var result = GetValorPropriedade(Dados, Nome ?? "");
+
+    if (Conteudo != null)
+    {
+        <td class="@CssClassTD">@Conteudo(Dados)</td>
+        return;
+    }
+
+    if (Nome == "SituacaoInativoDescricao")
+    {
+        var classText = GetValorPropriedade(Dados, "SituacaoInativoClass");
+        <td class="@CssClassTD">
+            <span><i class="fa-solid fa-circle me-2 @classText"></i>@result</span>
+        </td>
+        return;
+    }
+
+    <td class="@CssClassTD">@result</td>
+}
+

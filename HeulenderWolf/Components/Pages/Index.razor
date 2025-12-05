@@ -1,12 +1,25 @@
 ﻿@page "/"
 @using HeulenderWolf.Components.Organisms.Sections
+@using HeulenderWolf.Models
 <CascadingValue Value="ConfiguracaoGeral">
-    <Header />
-    <First />
-    <Filhotes />
-    <Sobre />
-    <Diferenciais />
-    <Depoimentos />
-    <FAQ />
+    <Header OnClickEvent="ShowModal"/>
+    <First OnClickEvent="ShowModal" />
+    <Filhotes OnClickEvent="ShowModal" />
+    <Sobre OnClickEvent="ShowModal" />
+    <Diferenciais OnClickEvent="ShowModal" />
+    <Depoimentos OnClickEvent="ShowModal" />
+    <FAQ OnClickEvent="ShowModal" />
     <Footer />
 </CascadingValue>
+<HWFormModal @ref="FormModal"
+             TItem="VisitanteModel"
+             TituloHeader="Formulário para visitante"
+             Context="ctx">
+    <div class="row g-3">
+        <HWInputText Grid="6" @bind-Value="ctx.NomeCompleto" Label="Nome completo"/>
+        <HWInputText Grid="6" @bind-Value="ctx.NumeroCelular" Label="Número de celular"/>
+        <HWInputText Grid="6" @bind-Value="ctx.Email" Label="Email" />
+        <HWInputText Grid="6" @bind-Value="ctx.MetodoEncontro" Label="Como nos conheceu?"/>
+        <HWInputTextArea @bind-Value="ctx.DesejoFilhote" Label="O que espera do seu mais novo pet?"/>
+    </div>
+</HWFormModal>

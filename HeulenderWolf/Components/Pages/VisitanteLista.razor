@@ -1,0 +1,19 @@
+﻿@using HeulenderWolf.Components.Organisms.Sections
+@using HeulenderWolf.Models
+@page "/VisitanteLista"
+<Header />
+<div class="p-5 mt-10">
+
+
+<HWTable TItem="VisitanteModel" Dados="Listagem" Context="ctx">
+    <Colunas>
+        <HWColuna Descricao="Nome Completo" Nome="NomeCompleto" Largura="w-150px" />
+        <HWColuna Descricao="Email" Nome="Email" />
+        <HWColuna Descricao="Numero de celular" Nome="NumeroCelular" />
+        <HWColuna Descricao="Como encontrou a gente" Nome="MetodoEncontro"/>
+            <HWColuna Descricao="O que quer de um pet" Nome="DesejoFilhote"/>
+    </Colunas>
+    <Footer>
+    </Footer>
+</HWTable>
+</div>

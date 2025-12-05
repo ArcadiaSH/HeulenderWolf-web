@@ -8,6 +8,8 @@ namespace HeulenderWolf.Components.Organisms.Sections
     {
         #region PARÂMETROS
 
+        [Parameter]
+        public EventCallback OnClickEvent { get; set; }
         //[Parameter]
         //public PesquisaAvaliacaoPreVisualizacao PreVisualizacaoDeDados { get; set; }
 
